@@ -65,6 +65,7 @@
 		E52D259C1C6FA2EE00DD302F /* アイコン@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = E52D258D1C6FA2EE00DD302F /* アイコン@2x~ipad.png */; };
 		E52D259D1C6FA2EE00DD302F /* アイコン~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = E52D258E1C6FA2EE00DD302F /* アイコン~ipad.png */; };
 		E52D259F1C6FA3C000DD302F /* アイコン.png in Resources */ = {isa = PBXBuildFile; fileRef = E52D259E1C6FA3C000DD302F /* アイコン.png */; };
+		E5E7185B1C6FD2A7001957B9 /* AnalyticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E7185A1C6FD2A7001957B9 /* AnalyticsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -183,6 +184,8 @@
 		E52D258D1C6FA2EE00DD302F /* アイコン@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "アイコン@2x~ipad.png"; sourceTree = "<group>"; };
 		E52D258E1C6FA2EE00DD302F /* アイコン~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "アイコン~ipad.png"; sourceTree = "<group>"; };
 		E52D259E1C6FA3C000DD302F /* アイコン.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "アイコン.png"; sourceTree = "<group>"; };
+		E5E718591C6FD2A7001957B9 /* AnalyticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyticsViewController.h; sourceTree = "<group>"; };
+		E5E7185A1C6FD2A7001957B9 /* AnalyticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyticsViewController.m; sourceTree = "<group>"; };
 		F50F4A7F16B7C6EA2585DCD8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F69AC425C705F98C294597DE /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -305,6 +308,7 @@
 			isa = PBXGroup;
 			children = (
 				C378F7C41C60BBF000EBDF6D /* Main.storyboard */,
+				E5E718581C6FD26C001957B9 /* AnalyticsView */,
 				C31715EA1C6EC770005D1F64 /* LaunchScreen */,
 				C37893CB1C6CA6B600294BDF /* TopView */,
 				C3EAA92F1C6F012800FCD22C /* MemberView */,
@@ -679,6 +683,15 @@
 			path = "Legacy (iOS 6 and before)";
 			sourceTree = "<group>";
 		};
+		E5E718581C6FD26C001957B9 /* AnalyticsView */ = {
+			isa = PBXGroup;
+			children = (
+				E5E718591C6FD2A7001957B9 /* AnalyticsViewController.h */,
+				E5E7185A1C6FD2A7001957B9 /* AnalyticsViewController.m */,
+			);
+			name = AnalyticsView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -907,6 +920,7 @@
 				C378F7C01C60BBF000EBDF6D /* AppDelegate.m in Sources */,
 				C32F2D091C6AAE2B00C3D037 /* RTMStartResponse.m in Sources */,
 				C3EAA92B1C6EDE3C00FCD22C /* GetUserListResponse.m in Sources */,
+				E5E7185B1C6FD2A7001957B9 /* AnalyticsViewController.m in Sources */,
 				C3B402C51C64C7E200F26008 /* TimeleaperKimuraService.m in Sources */,
 				C378F7BD1C60BBF000EBDF6D /* main.m in Sources */,
 				C37893D41C6CAF5900294BDF /* RTMSessionReconnect.m in Sources */,
