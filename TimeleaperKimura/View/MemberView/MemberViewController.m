@@ -5,7 +5,6 @@
 //  Created by 岩田彬広 on 2016/02/13.
 //  Copyright © 2016年 Akihiro.Iwata. All rights reserved.
 //
-
 #import "MemberViewController.h"
 #import "MemberViewTableViewCell.h"
 
@@ -40,13 +39,23 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
+    //iOS7より、TabBarを設定することによって、変な余白が設定される。(今回の場合、その影響を受けてTabBatの下にToolBarが隠れる)
+    //これに対応するため、下記２行を追加
+    self.view.translatesAutoresizingMaskIntoConstraints = YES;
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    
+    //各UIパーツの色を設定
+    //NavigationBarのタイトル文字列の色は変更不可なのでUILabelを生成して貼付ける
+    UILabel *title = [[UILabel alloc] initWithFrame:CGRectZero];
+    title.font = [UIFont boldSystemFontOfSize:17.0];
+    title.text = @"友だち一覧";
+    [title sizeToFit];
+    self.navigationItem.titleView = title;
+    
     // get User List
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-    [ud synchronize];
-    memberArray = [[NSMutableArray alloc]init];
-    
-    //[NSKeyedUnarchiver unarchiveObjectWithData:data];
     NSData *obj1 = [ud objectForKey:@"userList"];
+    memberArray = [[NSMutableArray alloc]init];
     memberArray = [NSKeyedUnarchiver unarchiveObjectWithData:obj1];
     
     // register cell nib

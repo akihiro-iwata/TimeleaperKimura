@@ -8,6 +8,10 @@
 
 #import "GetUserListResponse.h"
 
+@implementation Profile
+
+@end
+
 @implementation Member
 
 @end

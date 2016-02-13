@@ -15,7 +15,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="65.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ai_Shinozaki" translatesAutoresizingMaskIntoConstraints="NO" id="aNl-K2-K6M">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aNl-K2-K6M">
                         <rect key="frame" x="20" y="11" width="44" height="44"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="44" id="IKc-Qc-hLO"/>
@@ -67,7 +67,4 @@
             </connections>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="Ai_Shinozaki" width="187" height="250"/>
-    </resources>
 </document>
