@@ -10,6 +10,7 @@
 
 @interface AnalyticsViewController ()
 @property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *rightBarButton;
 
 @end
 
@@ -31,12 +32,9 @@
     title.text = @"分析";
     [title sizeToFit];
     self.navigationItem.titleView = title;
-    [self.navigationBar addSubview:self.navigationItem.titleView];
     
-    // ボタンを上記で作成したViewを用いて作成します。
-    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(dismissView)];
-    // ナビゲーションバーに追加します。
-    self.navigationItem.rightBarButtonItem = rightButton;
+    self.rightBarButton.target = self;
+    self.rightBarButton.action = @selector(dismissView);
 }
 
 - (void)viewWillAppear:(BOOL)animated{

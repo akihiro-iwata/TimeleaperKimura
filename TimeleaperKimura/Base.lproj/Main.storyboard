@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="PLW-KV-mWH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="PLW-KV-mWH">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -44,6 +44,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="2TF-xA-1Cr"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Slackアカウントを作る"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6w4-ne-8tK">
@@ -51,8 +52,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="g3A-0o-GJj"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" title="木村、タイムリープしてね？">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="始める">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -60,16 +61,31 @@
                                     <action selector="startApp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cYD-Mr-va5"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="アイディアアイコン (1).png" translatesAutoresizingMaskIntoConstraints="NO" id="Mhg-VA-XVU">
+                                <rect key="frame" x="59" y="206" width="256" height="256"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="256" id="hK2-KG-9mQ"/>
+                                    <constraint firstAttribute="height" constant="256" id="udX-cD-Wyl"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.96470588235294119" green="0.14117647058823529" blue="0.34901960784313724" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="Mhg-VA-XVU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8u0-Vy-iMV"/>
+                            <constraint firstItem="Mhg-VA-XVU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="144" id="AEE-8M-b67"/>
                             <constraint firstItem="VhG-1m-SQZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="12" id="Dve-dY-F72"/>
                             <constraint firstItem="6w4-ne-8tK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="12" id="OFk-mX-YKE"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="VhG-1m-SQZ" secondAttribute="bottom" constant="12" id="QXF-LE-QRr"/>
                             <constraint firstItem="VhG-1m-SQZ" firstAttribute="top" secondItem="6w4-ne-8tK" secondAttribute="bottom" constant="12" id="QiG-VF-cWU"/>
+                            <constraint firstItem="Mhg-VA-XVU" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="UtS-23-2jK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6w4-ne-8tK" secondAttribute="trailing" constant="12" id="x8P-mY-tEG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="VhG-1m-SQZ" secondAttribute="trailing" constant="12" id="zeG-yl-aIy"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="AEE-8M-b67"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="Uuh-CV-C5v"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -93,20 +109,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="FmB-8h-fe7">
-                                <rect key="frame" x="0.0" y="623" width="375" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="0in-Yr-mow"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
-                                    <segment title=""/>
-                                    <segment title=""/>
-                                </segments>
-                            </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="I9A-1p-Wgm">
-                                <rect key="frame" x="0.0" y="20" width="375" height="603"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="I9A-1p-Wgm">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="d3y-ZW-FTx" id="y2J-EN-kqE"/>
@@ -116,19 +120,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="FmB-8h-fe7" firstAttribute="top" secondItem="I9A-1p-Wgm" secondAttribute="bottom" id="5zs-do-nFw"/>
                             <constraint firstItem="I9A-1p-Wgm" firstAttribute="leading" secondItem="YNp-Vu-bcT" secondAttribute="leading" id="CyC-KT-rUf"/>
                             <constraint firstItem="I9A-1p-Wgm" firstAttribute="top" secondItem="wzo-8s-DoG" secondAttribute="bottom" id="EhA-GJ-5Fc"/>
-                            <constraint firstItem="RCD-HM-STf" firstAttribute="top" secondItem="FmB-8h-fe7" secondAttribute="bottom" id="I3u-zu-5Ac"/>
-                            <constraint firstItem="FmB-8h-fe7" firstAttribute="leading" secondItem="YNp-Vu-bcT" secondAttribute="leading" id="Txs-SC-1W7"/>
+                            <constraint firstItem="RCD-HM-STf" firstAttribute="top" secondItem="I9A-1p-Wgm" secondAttribute="bottom" id="Hek-NZ-gbc"/>
                             <constraint firstAttribute="trailing" secondItem="I9A-1p-Wgm" secondAttribute="trailing" id="eY0-M3-Gvq"/>
-                            <constraint firstAttribute="trailing" secondItem="FmB-8h-fe7" secondAttribute="trailing" id="s10-Pj-bsg"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="memberList" destination="I9A-1p-Wgm" id="ZcR-9y-qZB"/>
-                        <outlet property="segmentedControl" destination="FmB-8h-fe7" id="Uoz-gX-IwK"/>
                         <segue destination="zpF-DM-zty" kind="show" identifier="gotoChatView" id="Jg7-ox-5UJ"/>
                     </connections>
                 </viewController>
@@ -156,4 +156,7 @@
             <point key="canvasLocation" x="1045.5" y="334.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="アイディアアイコン (1).png" width="256" height="256"/>
+    </resources>
 </document>

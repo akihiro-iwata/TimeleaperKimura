@@ -94,6 +94,7 @@
     if(chatArchiveData){
         self.messages = [NSKeyedUnarchiver unarchiveObjectWithData:chatArchiveData];
     }
+
     // rtm session start
     [SVProgressHUD showWithStatus:@"now loading..."];
     [self getGroupHistory];
@@ -126,6 +127,7 @@
 {
     // NG word validation
     [SVProgressHUD showWithStatus:@"now loading..."];
+
     [self validationMessage:button withMessageText:text senderId:senderId senderDisplayName:senderDisplayName date:date];
 }
 
@@ -256,6 +258,7 @@
         }];
     } failure:^(NSError *error) {
         [SVProgressHUD dismiss];
+
         NSLog(@"%@",error);
     }];
     
@@ -297,7 +300,6 @@
 #pragma mark WebSocket Delegate
 - (void)webSocketDidOpen:(SRWebSocket *)webSocket{
     [SVProgressHUD dismiss];
-    
     self.srWebSocket = webSocket;
     NSLog(@"websocket did open:%@",webSocket);
     
