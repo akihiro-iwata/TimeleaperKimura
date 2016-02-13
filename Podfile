@@ -9,3 +9,5 @@ pod 'JSONModel'
 pod 'AFOAuth2Manager', :git => "https://github.com/AFNetworking/AFOAuth2Manager", :branch => "3_0_0_branch"
 pod 'GoogleAppIndexing'
 pod 'SocketRocket' 
+pod 'SVProgressHUD'
+pod 'SGNavigationProgress'
