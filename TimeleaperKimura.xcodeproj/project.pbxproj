@@ -26,6 +26,8 @@
 		C378F7CB1C60BBF000EBDF6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C378F7C91C60BBF000EBDF6D /* LaunchScreen.storyboard */; };
 		C378F7D61C60BBF000EBDF6D /* TimeleaperKimuraTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C378F7D51C60BBF000EBDF6D /* TimeleaperKimuraTests.m */; };
 		C378F7E11C60BBF000EBDF6D /* TimeleaperKimuraUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C378F7E01C60BBF000EBDF6D /* TimeleaperKimuraUITests.m */; };
+		C38D4FED1C6FCD5F007DF204 /* AnalyticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C38D4FEB1C6FCD5F007DF204 /* AnalyticsViewController.m */; };
+		C38D4FEE1C6FCD5F007DF204 /* AnalyticsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C38D4FEC1C6FCD5F007DF204 /* AnalyticsViewController.xib */; };
 		C3B402B31C64BA9700F26008 /* CommonService.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B402B21C64BA9700F26008 /* CommonService.m */; };
 		C3B402BC1C64C12000F26008 /* CommonDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B402BB1C64C12000F26008 /* CommonDTO.m */; };
 		C3B402BF1C64C31A00F26008 /* OAuthAuthorizationResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B402BE1C64C31A00F26008 /* OAuthAuthorizationResponse.m */; };
@@ -121,6 +123,9 @@
 		C378F7E01C60BBF000EBDF6D /* TimeleaperKimuraUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimeleaperKimuraUITests.m; sourceTree = "<group>"; };
 		C378F7E21C60BBF000EBDF6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C378F7F01C60BE7000EBDF6D /* PassConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PassConst.h; path = Util/Password/PassConst.h; sourceTree = "<group>"; };
+		C38D4FEA1C6FCD5F007DF204 /* AnalyticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnalyticsViewController.h; path = View/AnalyticsView/AnalyticsViewController.h; sourceTree = "<group>"; };
+		C38D4FEB1C6FCD5F007DF204 /* AnalyticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnalyticsViewController.m; path = View/AnalyticsView/AnalyticsViewController.m; sourceTree = "<group>"; };
+		C38D4FEC1C6FCD5F007DF204 /* AnalyticsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AnalyticsViewController.xib; path = View/AnalyticsView/AnalyticsViewController.xib; sourceTree = "<group>"; };
 		C3B402B11C64BA9700F26008 /* CommonService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonService.h; path = CommonService/Networking/CommonService.h; sourceTree = "<group>"; };
 		C3B402B21C64BA9700F26008 /* CommonService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommonService.m; path = CommonService/Networking/CommonService.m; sourceTree = "<group>"; };
 		C3B402BA1C64C12000F26008 /* CommonDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonDTO.h; path = CommonService/Networking/dto/CommonDTO.h; sourceTree = "<group>"; };
@@ -307,6 +312,7 @@
 				C37893CB1C6CA6B600294BDF /* TopView */,
 				C3EAA92F1C6F012800FCD22C /* MemberView */,
 				C3EAA9411C6F370700FCD22C /* ChatView */,
+				C38D4FE11C6FC8E4007DF204 /* AnalyticsView */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -448,6 +454,16 @@
 				C378F7BF1C60BBF000EBDF6D /* AppDelegate.m */,
 			);
 			name = Main;
+			sourceTree = "<group>";
+		};
+		C38D4FE11C6FC8E4007DF204 /* AnalyticsView */ = {
+			isa = PBXGroup;
+			children = (
+				C38D4FEA1C6FCD5F007DF204 /* AnalyticsViewController.h */,
+				C38D4FEB1C6FCD5F007DF204 /* AnalyticsViewController.m */,
+				C38D4FEC1C6FCD5F007DF204 /* AnalyticsViewController.xib */,
+			);
+			name = AnalyticsView;
 			sourceTree = "<group>";
 		};
 		C3B402B01C64BA3200F26008 /* CommonService */ = {
@@ -802,6 +818,7 @@
 				E52D25941C6FA2EE00DD302F /* アイコン-40@2x.png in Resources */,
 				E52D25971C6FA2EE00DD302F /* アイコン-60@3x.png in Resources */,
 				C378F7C61C60BBF000EBDF6D /* Main.storyboard in Resources */,
+				C38D4FEE1C6FCD5F007DF204 /* AnalyticsViewController.xib in Resources */,
 				E52D259B1C6FA2EE00DD302F /* アイコン@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -903,6 +920,7 @@
 				C378F7C01C60BBF000EBDF6D /* AppDelegate.m in Sources */,
 				C32F2D091C6AAE2B00C3D037 /* RTMStartResponse.m in Sources */,
 				C3EAA92B1C6EDE3C00FCD22C /* GetUserListResponse.m in Sources */,
+				C38D4FED1C6FCD5F007DF204 /* AnalyticsViewController.m in Sources */,
 				C3B402C51C64C7E200F26008 /* TimeleaperKimuraService.m in Sources */,
 				C378F7BD1C60BBF000EBDF6D /* main.m in Sources */,
 				C37893D41C6CAF5900294BDF /* RTMSessionReconnect.m in Sources */,

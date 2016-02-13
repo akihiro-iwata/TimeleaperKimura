@@ -7,6 +7,7 @@
 //
 
 #import "ChatViewController.h"
+#import "AnalyticsViewController.h"
 
 #import "NSObject+RunBlockTasks.h"
 
@@ -61,6 +62,11 @@
     [title sizeToFit];
     self.navigationItem.titleView = title;
     
+    // ボタンを上記で作成したViewを用いて作成します。
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(openAnalyticsView)];
+    // ナビゲーションバーに追加します。
+    self.navigationItem.rightBarButtonItem = rightButton;
+    
     ud = [NSUserDefaults standardUserDefaults];
     NSData *myData = [ud objectForKey:@"myList"];
     myList = [NSKeyedUnarchiver unarchiveObjectWithData:myData];
@@ -81,10 +87,13 @@
     // ④ メッセージデータの配列を初期化
     self.messages = [NSMutableArray array];
     
+    NSLog(@"self.Kimura.id: %@",self.Kimura.id);
     NSData *chatArchiveData = [ud objectForKey:self.Kimura.id];
-    NSMutableArray *chatArchveArray = [[NSMutableArray alloc]init];
-    chatArchveArray = [NSKeyedUnarchiver unarchiveObjectWithData:chatArchiveData];
+    NSMutableArray *chatArchveArray = [NSMutableArray array];
     
+    if(chatArchiveData){
+        self.messages = [NSKeyedUnarchiver unarchiveObjectWithData:chatArchiveData];
+    }
     // rtm session start
     [SVProgressHUD showWithStatus:@"now loading..."];
     [self getGroupHistory];
@@ -97,6 +106,13 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)openAnalyticsView {
+    
+    NSLog(@"%@",@"openAnalytics");
+    AnalyticsViewController *analyticsVC = [[AnalyticsViewController alloc] init];
+    [self presentViewController:analyticsVC animated:YES completion:nil];
 }
 
 #pragma mark - JSQMessagesViewController
@@ -296,7 +312,7 @@
     
     __block __weak ChatViewController *blockSelf = self;
     
-    if(!error && [response.user isEqualToString:self.Kimura.id] ){
+    if(!error && [response.user isEqualToString:self.Kimura.id] && response.text != nil){
 
         NSDate *date = [NSDate date];
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -316,14 +332,7 @@
                 JSQMessage *message = [JSQMessage messageWithSenderId:blockSelf.Kimura.id
                                                           displayName:blockSelf.Kimura.name
                                                                  text:response.text];
-                [blockSelf.messages addObject:message];
-                // メッセージの受信処理を完了する (画面上にメッセージが表示される)
-                [blockSelf finishReceivingMessageAnimated:YES];
-                /*
-                NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-                [ud setObject:blockSelf.messages forKey:blockSelf.Kimura.id];
-                [ud synchronize];
-                 */
+                [self.messages addObject:message];
             }];
             
         } failure:^(NSError *error) {
@@ -331,6 +340,8 @@
         }];
     }
     
+    // メッセージの受信処理を完了する (画面上にメッセージが表示される)
+    [self finishReceivingMessageAnimated:YES];
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.messages];
     [ud setObject:data forKey:self.Kimura.id];
     [ud synchronize];
