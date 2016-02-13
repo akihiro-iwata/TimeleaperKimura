@@ -7,19 +7,21 @@
 //
 
 #import "CommonDTO.h"
+@protocol Profile
+@end
 
-@interface Profile
-@property(nonatomic) NSString *first_name;
-@property(nonatomic) NSString *last_name;
-@property(nonatomic) NSString *real_name;
-@property(nonatomic) NSString *email;
+@interface Profile : CommonDTO
+@property(nonatomic) NSString<Optional> *first_name;
+@property(nonatomic) NSString<Optional> *last_name;
+@property(nonatomic) NSString<Optional> *real_name;
+@property(nonatomic) NSString<Optional> *email;
 @property(nonatomic) NSString<Optional> *skype;
 @property(nonatomic) NSString<Optional> *phone;
 @property(nonatomic) NSString<Optional> *image_24;
 @property(nonatomic) NSString<Optional> *image_32;
 @property(nonatomic) NSString<Optional> *image_48;
 @property(nonatomic) NSString<Optional> *image_72;
-@property(nonatomic) NSString *image_192;
+@property(nonatomic) NSString<Optional> *image_192;
 @end
 
 @protocol Member

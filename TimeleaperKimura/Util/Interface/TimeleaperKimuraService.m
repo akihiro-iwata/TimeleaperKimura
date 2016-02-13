@@ -11,7 +11,6 @@
 #import "CommonDTO.h"
 
 // xx base URL
-//https://timeleaperkimura.herokuapp.com/api/v1/messages
 static NSString *xxBaseURL = @"https://timeleaperkimura.herokuapp.com/api/";
 
 // xx Endpoint
@@ -186,9 +185,19 @@ static NSString *groupHistory = @"api/groups.history";
         success(customResponse);
     }failure:failure];
 }
-
-
-
-
-
+/*
++(void)downloadFileFromURL:(NSString*)url success:(void(^)(NSURL* filePath))success failure:(void(^)(NSString*, NSInteger))failure
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFImageResponseSerializer serializer] ; // 画像を受信する設定
+    [manager GET:<あなたの好きなURL>
+      parameters:nil
+         success:^(AFHTTPRequestOperation *operation,UIImage *image){
+             NSLog(@"画像取得成功:%@",image) ;
+         }
+         failure:^(AFHTTPRequestOperation *operation, NSError *error){
+             NSLog(@"画像取得失敗") ;
+         }] ;
+}
+*/
 @end

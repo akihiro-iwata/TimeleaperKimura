@@ -41,15 +41,27 @@
 @implementation ChatViewController
 {
     Member *myList;
-    // チャット相手
-    //Member *Kimura;
+    NSUserDefaults *ud;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    //iOS7より、TabBarを設定することによって、変な余白が設定される。(今回の場合、その影響を受けてTabBatの下にToolBarが隠れる)
+    //これに対応するため、下記２行を追加
+    self.view.translatesAutoresizingMaskIntoConstraints = YES;
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    
+    //各UIパーツの色を設定
+    //NavigationBarのタイトル文字列の色は変更不可なのでUILabelを生成して貼付ける
+    UILabel *title = [[UILabel alloc] initWithFrame:CGRectZero];
+    title.font = [UIFont boldSystemFontOfSize:17.0];
+    title.text = self.Kimura.name;
+    [title sizeToFit];
+    self.navigationItem.titleView = title;
+    
+    ud = [NSUserDefaults standardUserDefaults];
     NSData *myData = [ud objectForKey:@"myList"];
     myList = [NSKeyedUnarchiver unarchiveObjectWithData:myData];
     
@@ -68,6 +80,10 @@
     
     // ④ メッセージデータの配列を初期化
     self.messages = [NSMutableArray array];
+    
+    NSData *chatArchiveData = [ud objectForKey:self.Kimura.id];
+    NSMutableArray *chatArchveArray = [[NSMutableArray alloc]init];
+    chatArchveArray = [NSKeyedUnarchiver unarchiveObjectWithData:chatArchiveData];
     
     // rtm session start
     [SVProgressHUD showWithStatus:@"now loading..."];
@@ -136,9 +152,7 @@
 #pragma mark -
 #pragma mark IF Operations
 - (void)getGroupHistory {
-    
-    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-    
+        
     __block GetGroupHistoryRequest *request = [GetGroupHistoryRequest request:[ud stringForKey:@"access_token"] channel:@"D0KTUL8F8"];
     
     __block ChatViewController *blockSelf = self;
@@ -212,8 +226,6 @@
   senderDisplayName:(NSString *)senderDisplayName
                date:(NSDate *)date {
     
-    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-    
     PostDMRequest *request = [PostDMRequest request:[ud stringForKey:@"access_token"] channel:[@"@" stringByAppendingString:self.Kimura.name] text:text username:myList.name as_user:myList.name];
     
     __block __weak ChatViewController *blockSelf = self;
@@ -222,22 +234,24 @@
         NSLog(@"private channel: %@",response.channel);
         [blockSelf dispatch_async_main:^{
             [SVProgressHUD dismiss];
+
             // メッセージの送信処理を完了する (画面上にメッセージが表示される)
-            [self finishSendingMessageAnimated:YES];
+            [blockSelf finishSendingMessageAnimated:YES];
         }];
     } failure:^(NSError *error) {
         [SVProgressHUD dismiss];
         NSLog(@"%@",error);
     }];
     
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.messages];
+    [ud setObject:data forKey:self.Kimura.id];
+    [ud synchronize];
     //[self.srWebSocket send:request];
 }
 
 #pragma mark -
 #pragma mark Slack Real Time Message
 - (void)startRTMSession {
- 
-     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
  
      __block RTMStartRequest *request = [RTMStartRequest request:[ud stringForKey:@"access_token"] simple_latest:nil no_unreads:nil mpim_aware:nil];
  
@@ -305,12 +319,21 @@
                 [blockSelf.messages addObject:message];
                 // メッセージの受信処理を完了する (画面上にメッセージが表示される)
                 [blockSelf finishReceivingMessageAnimated:YES];
+                /*
+                NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+                [ud setObject:blockSelf.messages forKey:blockSelf.Kimura.id];
+                [ud synchronize];
+                 */
             }];
             
         } failure:^(NSError *error) {
             NSLog(@"%@",error);
         }];
     }
+    
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.messages];
+    [ud setObject:data forKey:self.Kimura.id];
+    [ud synchronize];
 }
 
 /*

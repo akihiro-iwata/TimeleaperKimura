@@ -10,6 +10,9 @@
 
 #import "GetUserListResponse.h"
 
+#import "UIKit+AFNetworking.h"
+#import "UIImageView+AFNetworking.h"
+
 @interface MemberViewTableViewCell()
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
@@ -33,6 +36,7 @@
     self.nameLabel.text = member.name;
     self.messageLabel.text = @"あ""ぁ""〜";
     
+    [self.profileImage setImageWithURL:[NSURL URLWithString:member.profile.image_192]];
     [self.contentView layoutIfNeeded];
 }
 
