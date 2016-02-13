@@ -1,0 +1,904 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		62753EE18AF1241704868DA5 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F69AC425C705F98C294597DE /* Pods.framework */; };
+		C32F2D061C6A0A4100C3D037 /* RTMStartRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C32F2D051C6A0A4100C3D037 /* RTMStartRequest.m */; };
+		C32F2D091C6AAE2B00C3D037 /* RTMStartResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C32F2D081C6AAE2B00C3D037 /* RTMStartResponse.m */; };
+		C34CB3811C66CA7B00113A4D /* NSURL+dictionaryFromQueryString.m in Sources */ = {isa = PBXBuildFile; fileRef = C34CB3801C66CA7B00113A4D /* NSURL+dictionaryFromQueryString.m */; };
+		C37893B81C6C8D0800294BDF /* CommonWebSocketService.m in Sources */ = {isa = PBXBuildFile; fileRef = C37893B71C6C8D0800294BDF /* CommonWebSocketService.m */; };
+		C37893BD1C6C969E00294BDF /* RTMSessionResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C37893BC1C6C969E00294BDF /* RTMSessionResponse.m */; };
+		C37893C01C6C972D00294BDF /* RTMSessionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C37893BF1C6C972D00294BDF /* RTMSessionRequest.m */; };
+		C37893C51C6C9D8A00294BDF /* GetChennelListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C37893C41C6C9D8A00294BDF /* GetChennelListRequest.m */; };
+		C37893C81C6C9D9A00294BDF /* GetChennelListResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C37893C71C6C9D9A00294BDF /* GetChennelListResponse.m */; };
+		C37893D11C6CAA1500294BDF /* PostMessageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C37893D01C6CAA1500294BDF /* PostMessageRequest.m */; };
+		C37893D41C6CAF5900294BDF /* RTMSessionReconnect.m in Sources */ = {isa = PBXBuildFile; fileRef = C37893D31C6CAF5900294BDF /* RTMSessionReconnect.m */; };
+		C378F7BD1C60BBF000EBDF6D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C378F7BC1C60BBF000EBDF6D /* main.m */; };
+		C378F7C01C60BBF000EBDF6D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C378F7BF1C60BBF000EBDF6D /* AppDelegate.m */; };
+		C378F7C31C60BBF000EBDF6D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C378F7C21C60BBF000EBDF6D /* ViewController.m */; };
+		C378F7C61C60BBF000EBDF6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C378F7C41C60BBF000EBDF6D /* Main.storyboard */; };
+		C378F7C81C60BBF000EBDF6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C378F7C71C60BBF000EBDF6D /* Assets.xcassets */; };
+		C378F7CB1C60BBF000EBDF6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C378F7C91C60BBF000EBDF6D /* LaunchScreen.storyboard */; };
+		C378F7D61C60BBF000EBDF6D /* TimeleaperKimuraTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C378F7D51C60BBF000EBDF6D /* TimeleaperKimuraTests.m */; };
+		C378F7E11C60BBF000EBDF6D /* TimeleaperKimuraUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C378F7E01C60BBF000EBDF6D /* TimeleaperKimuraUITests.m */; };
+		C3B402B31C64BA9700F26008 /* CommonService.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B402B21C64BA9700F26008 /* CommonService.m */; };
+		C3B402BC1C64C12000F26008 /* CommonDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B402BB1C64C12000F26008 /* CommonDTO.m */; };
+		C3B402BF1C64C31A00F26008 /* OAuthAuthorizationResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B402BE1C64C31A00F26008 /* OAuthAuthorizationResponse.m */; };
+		C3B402C21C64C3E100F26008 /* OAuthAuthorizationRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B402C11C64C3E100F26008 /* OAuthAuthorizationRequest.m */; };
+		C3B402C51C64C7E200F26008 /* TimeleaperKimuraService.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B402C41C64C7E200F26008 /* TimeleaperKimuraService.m */; };
+		C3B402C81C64CC0E00F26008 /* NSObject+RunBlockBackGround.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B402C71C64CC0E00F26008 /* NSObject+RunBlockBackGround.m */; };
+		C3B402CD1C65ACB600F26008 /* xxAPIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B402CC1C65ACB600F26008 /* xxAPIResponse.m */; };
+		C3B402D31C65AD0800F26008 /* xxAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B402D21C65AD0800F26008 /* xxAPIRequest.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C378F7D21C60BBF000EBDF6D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C378F7B01C60BBF000EBDF6D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C378F7B71C60BBF000EBDF6D;
+			remoteInfo = TimeleaperKimura;
+		};
+		C378F7DD1C60BBF000EBDF6D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C378F7B01C60BBF000EBDF6D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C378F7B71C60BBF000EBDF6D;
+			remoteInfo = TimeleaperKimura;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C32F2D041C6A0A4100C3D037 /* RTMStartRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTMStartRequest.h; path = Util/Interface/Slack/RTMStart/dto/RTMStartRequest.h; sourceTree = "<group>"; };
+		C32F2D051C6A0A4100C3D037 /* RTMStartRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTMStartRequest.m; path = Util/Interface/Slack/RTMStart/dto/RTMStartRequest.m; sourceTree = "<group>"; };
+		C32F2D071C6AAE2B00C3D037 /* RTMStartResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTMStartResponse.h; path = Util/Interface/Slack/RTMStart/dto/RTMStartResponse.h; sourceTree = "<group>"; };
+		C32F2D081C6AAE2B00C3D037 /* RTMStartResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTMStartResponse.m; path = Util/Interface/Slack/RTMStart/dto/RTMStartResponse.m; sourceTree = "<group>"; };
+		C34CB37F1C66CA7B00113A4D /* NSURL+dictionaryFromQueryString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSURL+dictionaryFromQueryString.h"; path = "Util/NSURL+dictionaryFromQueryString.h"; sourceTree = "<group>"; };
+		C34CB3801C66CA7B00113A4D /* NSURL+dictionaryFromQueryString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSURL+dictionaryFromQueryString.m"; path = "Util/NSURL+dictionaryFromQueryString.m"; sourceTree = "<group>"; };
+		C37893B61C6C8D0800294BDF /* CommonWebSocketService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonWebSocketService.h; path = CommonService/Networking/CommonWebSocketService.h; sourceTree = "<group>"; };
+		C37893B71C6C8D0800294BDF /* CommonWebSocketService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommonWebSocketService.m; path = CommonService/Networking/CommonWebSocketService.m; sourceTree = "<group>"; };
+		C37893BB1C6C969E00294BDF /* RTMSessionResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTMSessionResponse.h; path = Util/Interface/Slack/RTMSession/dto/RTMSessionResponse.h; sourceTree = "<group>"; };
+		C37893BC1C6C969E00294BDF /* RTMSessionResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTMSessionResponse.m; path = Util/Interface/Slack/RTMSession/dto/RTMSessionResponse.m; sourceTree = "<group>"; };
+		C37893BE1C6C972D00294BDF /* RTMSessionRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTMSessionRequest.h; path = Util/Interface/Slack/RTMSession/dto/RTMSessionRequest.h; sourceTree = "<group>"; };
+		C37893BF1C6C972D00294BDF /* RTMSessionRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTMSessionRequest.m; path = Util/Interface/Slack/RTMSession/dto/RTMSessionRequest.m; sourceTree = "<group>"; };
+		C37893C31C6C9D8A00294BDF /* GetChennelListRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GetChennelListRequest.h; path = Util/Interface/Slack/GetChennelList/dto/GetChennelListRequest.h; sourceTree = "<group>"; };
+		C37893C41C6C9D8A00294BDF /* GetChennelListRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GetChennelListRequest.m; path = Util/Interface/Slack/GetChennelList/dto/GetChennelListRequest.m; sourceTree = "<group>"; };
+		C37893C61C6C9D9A00294BDF /* GetChennelListResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GetChennelListResponse.h; path = Util/Interface/Slack/GetChennelList/dto/GetChennelListResponse.h; sourceTree = "<group>"; };
+		C37893C71C6C9D9A00294BDF /* GetChennelListResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GetChennelListResponse.m; path = Util/Interface/Slack/GetChennelList/dto/GetChennelListResponse.m; sourceTree = "<group>"; };
+		C37893CF1C6CAA1500294BDF /* PostMessageRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostMessageRequest.h; path = Util/Interface/Slack/PostMessage/dto/PostMessageRequest.h; sourceTree = "<group>"; };
+		C37893D01C6CAA1500294BDF /* PostMessageRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostMessageRequest.m; path = Util/Interface/Slack/PostMessage/dto/PostMessageRequest.m; sourceTree = "<group>"; };
+		C37893D21C6CAF5900294BDF /* RTMSessionReconnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTMSessionReconnect.h; path = Util/Interface/Slack/RTMSession/dto/Reconnect/RTMSessionReconnect.h; sourceTree = "<group>"; };
+		C37893D31C6CAF5900294BDF /* RTMSessionReconnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTMSessionReconnect.m; path = Util/Interface/Slack/RTMSession/dto/Reconnect/RTMSessionReconnect.m; sourceTree = "<group>"; };
+		C378F7B81C60BBF000EBDF6D /* TimeleaperKimura.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeleaperKimura.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C378F7BC1C60BBF000EBDF6D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C378F7BE1C60BBF000EBDF6D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C378F7BF1C60BBF000EBDF6D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C378F7C11C60BBF000EBDF6D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		C378F7C21C60BBF000EBDF6D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C378F7C51C60BBF000EBDF6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C378F7C71C60BBF000EBDF6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C378F7CA1C60BBF000EBDF6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C378F7CC1C60BBF000EBDF6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C378F7D11C60BBF000EBDF6D /* TimeleaperKimuraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeleaperKimuraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C378F7D51C60BBF000EBDF6D /* TimeleaperKimuraTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimeleaperKimuraTests.m; sourceTree = "<group>"; };
+		C378F7D71C60BBF000EBDF6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C378F7DC1C60BBF000EBDF6D /* TimeleaperKimuraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeleaperKimuraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C378F7E01C60BBF000EBDF6D /* TimeleaperKimuraUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimeleaperKimuraUITests.m; sourceTree = "<group>"; };
+		C378F7E21C60BBF000EBDF6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C378F7F01C60BE7000EBDF6D /* PassConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PassConst.h; path = Util/Password/PassConst.h; sourceTree = "<group>"; };
+		C3B402B11C64BA9700F26008 /* CommonService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonService.h; path = CommonService/Networking/CommonService.h; sourceTree = "<group>"; };
+		C3B402B21C64BA9700F26008 /* CommonService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommonService.m; path = CommonService/Networking/CommonService.m; sourceTree = "<group>"; };
+		C3B402BA1C64C12000F26008 /* CommonDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonDTO.h; path = CommonService/Networking/dto/CommonDTO.h; sourceTree = "<group>"; };
+		C3B402BB1C64C12000F26008 /* CommonDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommonDTO.m; path = CommonService/Networking/dto/CommonDTO.m; sourceTree = "<group>"; };
+		C3B402BD1C64C31A00F26008 /* OAuthAuthorizationResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OAuthAuthorizationResponse.h; path = Util/Interface/OAuthAuthorization/dto/OAuthAuthorizationResponse.h; sourceTree = "<group>"; };
+		C3B402BE1C64C31A00F26008 /* OAuthAuthorizationResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OAuthAuthorizationResponse.m; path = Util/Interface/OAuthAuthorization/dto/OAuthAuthorizationResponse.m; sourceTree = "<group>"; };
+		C3B402C01C64C3E100F26008 /* OAuthAuthorizationRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OAuthAuthorizationRequest.h; path = Util/Interface/OAuthAuthorization/dto/OAuthAuthorizationRequest.h; sourceTree = "<group>"; };
+		C3B402C11C64C3E100F26008 /* OAuthAuthorizationRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OAuthAuthorizationRequest.m; path = Util/Interface/OAuthAuthorization/dto/OAuthAuthorizationRequest.m; sourceTree = "<group>"; };
+		C3B402C31C64C7E200F26008 /* TimeleaperKimuraService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimeleaperKimuraService.h; path = Util/Interface/TimeleaperKimuraService.h; sourceTree = "<group>"; };
+		C3B402C41C64C7E200F26008 /* TimeleaperKimuraService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimeleaperKimuraService.m; path = Util/Interface/TimeleaperKimuraService.m; sourceTree = "<group>"; };
+		C3B402C61C64CC0E00F26008 /* NSObject+RunBlockBackGround.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+RunBlockBackGround.h"; path = "Util/NSObject+RunBlockBackGround.h"; sourceTree = "<group>"; };
+		C3B402C71C64CC0E00F26008 /* NSObject+RunBlockBackGround.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+RunBlockBackGround.m"; path = "Util/NSObject+RunBlockBackGround.m"; sourceTree = "<group>"; };
+		C3B402CB1C65ACB600F26008 /* xxAPIResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = xxAPIResponse.h; path = Util/Interface/xxAPI/dto/xxAPIResponse.h; sourceTree = "<group>"; };
+		C3B402CC1C65ACB600F26008 /* xxAPIResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = xxAPIResponse.m; path = Util/Interface/xxAPI/dto/xxAPIResponse.m; sourceTree = "<group>"; };
+		C3B402D11C65AD0800F26008 /* xxAPIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = xxAPIRequest.h; path = Util/Interface/xxAPI/dto/xxAPIRequest.h; sourceTree = "<group>"; };
+		C3B402D21C65AD0800F26008 /* xxAPIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = xxAPIRequest.m; path = Util/Interface/xxAPI/dto/xxAPIRequest.m; sourceTree = "<group>"; };
+		DA9797D29F17F83D60C1EF3A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		F50F4A7F16B7C6EA2585DCD8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		F69AC425C705F98C294597DE /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C378F7B51C60BBF000EBDF6D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62753EE18AF1241704868DA5 /* Pods.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C378F7CE1C60BBF000EBDF6D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C378F7D91C60BBF000EBDF6D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2E8D9376D2A361DC58FF9FCA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DA9797D29F17F83D60C1EF3A /* Pods.debug.xcconfig */,
+				F50F4A7F16B7C6EA2585DCD8 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C32F2CFE1C6A09D400C3D037 /* Slack */ = {
+			isa = PBXGroup;
+			children = (
+				C37893CC1C6CA8A300294BDF /* RTM */,
+				C37893C11C6C9D6000294BDF /* GetChennelList */,
+				C3B402B61C64C05D00F26008 /* OAuthAuthorization */,
+			);
+			name = Slack;
+			sourceTree = "<group>";
+		};
+		C32F2CFF1C6A09DD00C3D037 /* RTMStart */ = {
+			isa = PBXGroup;
+			children = (
+				C32F2D031C6A0A1100C3D037 /* dto */,
+			);
+			name = RTMStart;
+			sourceTree = "<group>";
+		};
+		C32F2D031C6A0A1100C3D037 /* dto */ = {
+			isa = PBXGroup;
+			children = (
+				C32F2D041C6A0A4100C3D037 /* RTMStartRequest.h */,
+				C32F2D051C6A0A4100C3D037 /* RTMStartRequest.m */,
+				C32F2D071C6AAE2B00C3D037 /* RTMStartResponse.h */,
+				C32F2D081C6AAE2B00C3D037 /* RTMStartResponse.m */,
+			);
+			name = dto;
+			sourceTree = "<group>";
+		};
+		C37893B91C6C966100294BDF /* RTMSession */ = {
+			isa = PBXGroup;
+			children = (
+				C37893BA1C6C967E00294BDF /* dto */,
+			);
+			name = RTMSession;
+			sourceTree = "<group>";
+		};
+		C37893BA1C6C967E00294BDF /* dto */ = {
+			isa = PBXGroup;
+			children = (
+				C37893D51C6CAF5D00294BDF /* Reconnect */,
+				C37893BE1C6C972D00294BDF /* RTMSessionRequest.h */,
+				C37893BF1C6C972D00294BDF /* RTMSessionRequest.m */,
+				C37893BB1C6C969E00294BDF /* RTMSessionResponse.h */,
+				C37893BC1C6C969E00294BDF /* RTMSessionResponse.m */,
+			);
+			name = dto;
+			sourceTree = "<group>";
+		};
+		C37893C11C6C9D6000294BDF /* GetChennelList */ = {
+			isa = PBXGroup;
+			children = (
+				C37893C21C6C9D6F00294BDF /* dto */,
+			);
+			name = GetChennelList;
+			sourceTree = "<group>";
+		};
+		C37893C21C6C9D6F00294BDF /* dto */ = {
+			isa = PBXGroup;
+			children = (
+				C37893C31C6C9D8A00294BDF /* GetChennelListRequest.h */,
+				C37893C41C6C9D8A00294BDF /* GetChennelListRequest.m */,
+				C37893C61C6C9D9A00294BDF /* GetChennelListResponse.h */,
+				C37893C71C6C9D9A00294BDF /* GetChennelListResponse.m */,
+			);
+			name = dto;
+			sourceTree = "<group>";
+		};
+		C37893CA1C6CA6AA00294BDF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C378F7C41C60BBF000EBDF6D /* Main.storyboard */,
+				C37893CB1C6CA6B600294BDF /* TopView */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		C37893CB1C6CA6B600294BDF /* TopView */ = {
+			isa = PBXGroup;
+			children = (
+				C378F7C11C60BBF000EBDF6D /* ViewController.h */,
+				C378F7C21C60BBF000EBDF6D /* ViewController.m */,
+			);
+			name = TopView;
+			sourceTree = "<group>";
+		};
+		C37893CC1C6CA8A300294BDF /* RTM */ = {
+			isa = PBXGroup;
+			children = (
+				C37893CD1C6CA8AB00294BDF /* PostMessage */,
+				C32F2CFF1C6A09DD00C3D037 /* RTMStart */,
+				C37893B91C6C966100294BDF /* RTMSession */,
+			);
+			name = RTM;
+			sourceTree = "<group>";
+		};
+		C37893CD1C6CA8AB00294BDF /* PostMessage */ = {
+			isa = PBXGroup;
+			children = (
+				C37893CE1C6CA8B900294BDF /* dto */,
+			);
+			name = PostMessage;
+			sourceTree = "<group>";
+		};
+		C37893CE1C6CA8B900294BDF /* dto */ = {
+			isa = PBXGroup;
+			children = (
+				C37893CF1C6CAA1500294BDF /* PostMessageRequest.h */,
+				C37893D01C6CAA1500294BDF /* PostMessageRequest.m */,
+			);
+			name = dto;
+			sourceTree = "<group>";
+		};
+		C37893D51C6CAF5D00294BDF /* Reconnect */ = {
+			isa = PBXGroup;
+			children = (
+				C37893D21C6CAF5900294BDF /* RTMSessionReconnect.h */,
+				C37893D31C6CAF5900294BDF /* RTMSessionReconnect.m */,
+			);
+			name = Reconnect;
+			sourceTree = "<group>";
+		};
+		C378F7AF1C60BBF000EBDF6D = {
+			isa = PBXGroup;
+			children = (
+				C378F7BA1C60BBF000EBDF6D /* TimeleaperKimura */,
+				C378F7D41C60BBF000EBDF6D /* TimeleaperKimuraTests */,
+				C378F7DF1C60BBF000EBDF6D /* TimeleaperKimuraUITests */,
+				C378F7B91C60BBF000EBDF6D /* Products */,
+				2E8D9376D2A361DC58FF9FCA /* Pods */,
+				E3BF5206B183D2946578DEAD /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C378F7B91C60BBF000EBDF6D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C378F7B81C60BBF000EBDF6D /* TimeleaperKimura.app */,
+				C378F7D11C60BBF000EBDF6D /* TimeleaperKimuraTests.xctest */,
+				C378F7DC1C60BBF000EBDF6D /* TimeleaperKimuraUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C378F7BA1C60BBF000EBDF6D /* TimeleaperKimura */ = {
+			isa = PBXGroup;
+			children = (
+				C37893CA1C6CA6AA00294BDF /* View */,
+				C3B402B01C64BA3200F26008 /* CommonService */,
+				C378F7F11C60BE8800EBDF6D /* Main */,
+				C378F7EE1C60BE0700EBDF6D /* Util */,
+				C3B402B51C64C04300F26008 /* Interface */,
+				C378F7C71C60BBF000EBDF6D /* Assets.xcassets */,
+				C378F7C91C60BBF000EBDF6D /* LaunchScreen.storyboard */,
+				C378F7CC1C60BBF000EBDF6D /* Info.plist */,
+				C378F7BB1C60BBF000EBDF6D /* Supporting Files */,
+			);
+			path = TimeleaperKimura;
+			sourceTree = "<group>";
+		};
+		C378F7BB1C60BBF000EBDF6D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C378F7BC1C60BBF000EBDF6D /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C378F7D41C60BBF000EBDF6D /* TimeleaperKimuraTests */ = {
+			isa = PBXGroup;
+			children = (
+				C378F7D51C60BBF000EBDF6D /* TimeleaperKimuraTests.m */,
+				C378F7D71C60BBF000EBDF6D /* Info.plist */,
+			);
+			path = TimeleaperKimuraTests;
+			sourceTree = "<group>";
+		};
+		C378F7DF1C60BBF000EBDF6D /* TimeleaperKimuraUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C378F7E01C60BBF000EBDF6D /* TimeleaperKimuraUITests.m */,
+				C378F7E21C60BBF000EBDF6D /* Info.plist */,
+			);
+			path = TimeleaperKimuraUITests;
+			sourceTree = "<group>";
+		};
+		C378F7EE1C60BE0700EBDF6D /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				C378F7EF1C60BE1500EBDF6D /* Password */,
+				C3B402C61C64CC0E00F26008 /* NSObject+RunBlockBackGround.h */,
+				C3B402C71C64CC0E00F26008 /* NSObject+RunBlockBackGround.m */,
+				C34CB37F1C66CA7B00113A4D /* NSURL+dictionaryFromQueryString.h */,
+				C34CB3801C66CA7B00113A4D /* NSURL+dictionaryFromQueryString.m */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
+		C378F7EF1C60BE1500EBDF6D /* Password */ = {
+			isa = PBXGroup;
+			children = (
+				C378F7F01C60BE7000EBDF6D /* PassConst.h */,
+			);
+			name = Password;
+			sourceTree = "<group>";
+		};
+		C378F7F11C60BE8800EBDF6D /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				C378F7BE1C60BBF000EBDF6D /* AppDelegate.h */,
+				C378F7BF1C60BBF000EBDF6D /* AppDelegate.m */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		C3B402B01C64BA3200F26008 /* CommonService */ = {
+			isa = PBXGroup;
+			children = (
+				C3B402B41C64BA9B00F26008 /* Networking */,
+			);
+			name = CommonService;
+			sourceTree = "<group>";
+		};
+		C3B402B41C64BA9B00F26008 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				C3B402B11C64BA9700F26008 /* CommonService.h */,
+				C3B402B21C64BA9700F26008 /* CommonService.m */,
+				C37893B61C6C8D0800294BDF /* CommonWebSocketService.h */,
+				C37893B71C6C8D0800294BDF /* CommonWebSocketService.m */,
+				C3B402B91C64C10200F26008 /* dto */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		C3B402B51C64C04300F26008 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				C32F2CFE1C6A09D400C3D037 /* Slack */,
+				C3B402C91C65AC7300F26008 /* xxAPI */,
+				C3B402C31C64C7E200F26008 /* TimeleaperKimuraService.h */,
+				C3B402C41C64C7E200F26008 /* TimeleaperKimuraService.m */,
+			);
+			name = Interface;
+			sourceTree = "<group>";
+		};
+		C3B402B61C64C05D00F26008 /* OAuthAuthorization */ = {
+			isa = PBXGroup;
+			children = (
+				C3B402B71C64C0E000F26008 /* dto */,
+			);
+			name = OAuthAuthorization;
+			sourceTree = "<group>";
+		};
+		C3B402B71C64C0E000F26008 /* dto */ = {
+			isa = PBXGroup;
+			children = (
+				C3B402C01C64C3E100F26008 /* OAuthAuthorizationRequest.h */,
+				C3B402C11C64C3E100F26008 /* OAuthAuthorizationRequest.m */,
+				C3B402BD1C64C31A00F26008 /* OAuthAuthorizationResponse.h */,
+				C3B402BE1C64C31A00F26008 /* OAuthAuthorizationResponse.m */,
+			);
+			name = dto;
+			sourceTree = "<group>";
+		};
+		C3B402B91C64C10200F26008 /* dto */ = {
+			isa = PBXGroup;
+			children = (
+				C3B402BA1C64C12000F26008 /* CommonDTO.h */,
+				C3B402BB1C64C12000F26008 /* CommonDTO.m */,
+			);
+			name = dto;
+			sourceTree = "<group>";
+		};
+		C3B402C91C65AC7300F26008 /* xxAPI */ = {
+			isa = PBXGroup;
+			children = (
+				C3B402CA1C65AC9400F26008 /* dto */,
+			);
+			name = xxAPI;
+			sourceTree = "<group>";
+		};
+		C3B402CA1C65AC9400F26008 /* dto */ = {
+			isa = PBXGroup;
+			children = (
+				C3B402D11C65AD0800F26008 /* xxAPIRequest.h */,
+				C3B402D21C65AD0800F26008 /* xxAPIRequest.m */,
+				C3B402CB1C65ACB600F26008 /* xxAPIResponse.h */,
+				C3B402CC1C65ACB600F26008 /* xxAPIResponse.m */,
+			);
+			name = dto;
+			sourceTree = "<group>";
+		};
+		E3BF5206B183D2946578DEAD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F69AC425C705F98C294597DE /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C378F7B71C60BBF000EBDF6D /* TimeleaperKimura */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C378F7E51C60BBF000EBDF6D /* Build configuration list for PBXNativeTarget "TimeleaperKimura" */;
+			buildPhases = (
+				6674635C6C0302863FBC51A2 /* Check Pods Manifest.lock */,
+				C378F7B41C60BBF000EBDF6D /* Sources */,
+				C378F7B51C60BBF000EBDF6D /* Frameworks */,
+				C378F7B61C60BBF000EBDF6D /* Resources */,
+				8609FDE0544729FFD303C003 /* Embed Pods Frameworks */,
+				1E2A14423D745E7532EFD438 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TimeleaperKimura;
+			productName = TimeleaperKimura;
+			productReference = C378F7B81C60BBF000EBDF6D /* TimeleaperKimura.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C378F7D01C60BBF000EBDF6D /* TimeleaperKimuraTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C378F7E81C60BBF000EBDF6D /* Build configuration list for PBXNativeTarget "TimeleaperKimuraTests" */;
+			buildPhases = (
+				C378F7CD1C60BBF000EBDF6D /* Sources */,
+				C378F7CE1C60BBF000EBDF6D /* Frameworks */,
+				C378F7CF1C60BBF000EBDF6D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C378F7D31C60BBF000EBDF6D /* PBXTargetDependency */,
+			);
+			name = TimeleaperKimuraTests;
+			productName = TimeleaperKimuraTests;
+			productReference = C378F7D11C60BBF000EBDF6D /* TimeleaperKimuraTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C378F7DB1C60BBF000EBDF6D /* TimeleaperKimuraUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C378F7EB1C60BBF000EBDF6D /* Build configuration list for PBXNativeTarget "TimeleaperKimuraUITests" */;
+			buildPhases = (
+				C378F7D81C60BBF000EBDF6D /* Sources */,
+				C378F7D91C60BBF000EBDF6D /* Frameworks */,
+				C378F7DA1C60BBF000EBDF6D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C378F7DE1C60BBF000EBDF6D /* PBXTargetDependency */,
+			);
+			name = TimeleaperKimuraUITests;
+			productName = TimeleaperKimuraUITests;
+			productReference = C378F7DC1C60BBF000EBDF6D /* TimeleaperKimuraUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C378F7B01C60BBF000EBDF6D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = Akihiro.Iwata;
+				TargetAttributes = {
+					C378F7B71C60BBF000EBDF6D = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = WEE297KL3E;
+					};
+					C378F7D01C60BBF000EBDF6D = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = C378F7B71C60BBF000EBDF6D;
+					};
+					C378F7DB1C60BBF000EBDF6D = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = C378F7B71C60BBF000EBDF6D;
+					};
+				};
+			};
+			buildConfigurationList = C378F7B31C60BBF000EBDF6D /* Build configuration list for PBXProject "TimeleaperKimura" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C378F7AF1C60BBF000EBDF6D;
+			productRefGroup = C378F7B91C60BBF000EBDF6D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C378F7B71C60BBF000EBDF6D /* TimeleaperKimura */,
+				C378F7D01C60BBF000EBDF6D /* TimeleaperKimuraTests */,
+				C378F7DB1C60BBF000EBDF6D /* TimeleaperKimuraUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C378F7B61C60BBF000EBDF6D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C378F7CB1C60BBF000EBDF6D /* LaunchScreen.storyboard in Resources */,
+				C378F7C81C60BBF000EBDF6D /* Assets.xcassets in Resources */,
+				C378F7C61C60BBF000EBDF6D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C378F7CF1C60BBF000EBDF6D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C378F7DA1C60BBF000EBDF6D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1E2A14423D745E7532EFD438 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6674635C6C0302863FBC51A2 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8609FDE0544729FFD303C003 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C378F7B41C60BBF000EBDF6D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3B402D31C65AD0800F26008 /* xxAPIRequest.m in Sources */,
+				C3B402BC1C64C12000F26008 /* CommonDTO.m in Sources */,
+				C37893C81C6C9D9A00294BDF /* GetChennelListResponse.m in Sources */,
+				C37893C51C6C9D8A00294BDF /* GetChennelListRequest.m in Sources */,
+				C3B402B31C64BA9700F26008 /* CommonService.m in Sources */,
+				C3B402BF1C64C31A00F26008 /* OAuthAuthorizationResponse.m in Sources */,
+				C3B402C21C64C3E100F26008 /* OAuthAuthorizationRequest.m in Sources */,
+				C37893D11C6CAA1500294BDF /* PostMessageRequest.m in Sources */,
+				C37893C01C6C972D00294BDF /* RTMSessionRequest.m in Sources */,
+				C37893BD1C6C969E00294BDF /* RTMSessionResponse.m in Sources */,
+				C378F7C31C60BBF000EBDF6D /* ViewController.m in Sources */,
+				C3B402CD1C65ACB600F26008 /* xxAPIResponse.m in Sources */,
+				C37893B81C6C8D0800294BDF /* CommonWebSocketService.m in Sources */,
+				C32F2D061C6A0A4100C3D037 /* RTMStartRequest.m in Sources */,
+				C378F7C01C60BBF000EBDF6D /* AppDelegate.m in Sources */,
+				C32F2D091C6AAE2B00C3D037 /* RTMStartResponse.m in Sources */,
+				C3B402C51C64C7E200F26008 /* TimeleaperKimuraService.m in Sources */,
+				C378F7BD1C60BBF000EBDF6D /* main.m in Sources */,
+				C37893D41C6CAF5900294BDF /* RTMSessionReconnect.m in Sources */,
+				C34CB3811C66CA7B00113A4D /* NSURL+dictionaryFromQueryString.m in Sources */,
+				C3B402C81C64CC0E00F26008 /* NSObject+RunBlockBackGround.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C378F7CD1C60BBF000EBDF6D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C378F7D61C60BBF000EBDF6D /* TimeleaperKimuraTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C378F7D81C60BBF000EBDF6D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C378F7E11C60BBF000EBDF6D /* TimeleaperKimuraUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C378F7D31C60BBF000EBDF6D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C378F7B71C60BBF000EBDF6D /* TimeleaperKimura */;
+			targetProxy = C378F7D21C60BBF000EBDF6D /* PBXContainerItemProxy */;
+		};
+		C378F7DE1C60BBF000EBDF6D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C378F7B71C60BBF000EBDF6D /* TimeleaperKimura */;
+			targetProxy = C378F7DD1C60BBF000EBDF6D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C378F7C41C60BBF000EBDF6D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C378F7C51C60BBF000EBDF6D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C378F7C91C60BBF000EBDF6D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C378F7CA1C60BBF000EBDF6D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C378F7E31C60BBF000EBDF6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C378F7E41C60BBF000EBDF6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C378F7E61C60BBF000EBDF6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA9797D29F17F83D60C1EF3A /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = TimeleaperKimura/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Akihiro.Iwata.TimeleaperKimura;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C378F7E71C60BBF000EBDF6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F50F4A7F16B7C6EA2585DCD8 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = TimeleaperKimura/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Akihiro.Iwata.TimeleaperKimura;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		C378F7E91C60BBF000EBDF6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TimeleaperKimuraTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Akihiro.Iwata.TimeleaperKimuraTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TimeleaperKimura.app/TimeleaperKimura";
+			};
+			name = Debug;
+		};
+		C378F7EA1C60BBF000EBDF6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TimeleaperKimuraTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Akihiro.Iwata.TimeleaperKimuraTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TimeleaperKimura.app/TimeleaperKimura";
+			};
+			name = Release;
+		};
+		C378F7EC1C60BBF000EBDF6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TimeleaperKimuraUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Akihiro.Iwata.TimeleaperKimuraUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TimeleaperKimura;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		C378F7ED1C60BBF000EBDF6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TimeleaperKimuraUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Akihiro.Iwata.TimeleaperKimuraUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TimeleaperKimura;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C378F7B31C60BBF000EBDF6D /* Build configuration list for PBXProject "TimeleaperKimura" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C378F7E31C60BBF000EBDF6D /* Debug */,
+				C378F7E41C60BBF000EBDF6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C378F7E51C60BBF000EBDF6D /* Build configuration list for PBXNativeTarget "TimeleaperKimura" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C378F7E61C60BBF000EBDF6D /* Debug */,
+				C378F7E71C60BBF000EBDF6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C378F7E81C60BBF000EBDF6D /* Build configuration list for PBXNativeTarget "TimeleaperKimuraTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C378F7E91C60BBF000EBDF6D /* Debug */,
+				C378F7EA1C60BBF000EBDF6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C378F7EB1C60BBF000EBDF6D /* Build configuration list for PBXNativeTarget "TimeleaperKimuraUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C378F7EC1C60BBF000EBDF6D /* Debug */,
+				C378F7ED1C60BBF000EBDF6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C378F7B01C60BBF000EBDF6D /* Project object */;
+}
