@@ -26,8 +26,6 @@
 		C378F7CB1C60BBF000EBDF6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C378F7C91C60BBF000EBDF6D /* LaunchScreen.storyboard */; };
 		C378F7D61C60BBF000EBDF6D /* TimeleaperKimuraTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C378F7D51C60BBF000EBDF6D /* TimeleaperKimuraTests.m */; };
 		C378F7E11C60BBF000EBDF6D /* TimeleaperKimuraUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C378F7E01C60BBF000EBDF6D /* TimeleaperKimuraUITests.m */; };
-		C38D4FED1C6FCD5F007DF204 /* AnalyticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C38D4FEB1C6FCD5F007DF204 /* AnalyticsViewController.m */; };
-		C38D4FEE1C6FCD5F007DF204 /* AnalyticsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C38D4FEC1C6FCD5F007DF204 /* AnalyticsViewController.xib */; };
 		C3B402B31C64BA9700F26008 /* CommonService.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B402B21C64BA9700F26008 /* CommonService.m */; };
 		C3B402BC1C64C12000F26008 /* CommonDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B402BB1C64C12000F26008 /* CommonDTO.m */; };
 		C3B402BF1C64C31A00F26008 /* OAuthAuthorizationResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B402BE1C64C31A00F26008 /* OAuthAuthorizationResponse.m */; };
@@ -67,6 +65,7 @@
 		E52D259C1C6FA2EE00DD302F /* アイコン@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = E52D258D1C6FA2EE00DD302F /* アイコン@2x~ipad.png */; };
 		E52D259D1C6FA2EE00DD302F /* アイコン~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = E52D258E1C6FA2EE00DD302F /* アイコン~ipad.png */; };
 		E52D259F1C6FA3C000DD302F /* アイコン.png in Resources */ = {isa = PBXBuildFile; fileRef = E52D259E1C6FA3C000DD302F /* アイコン.png */; };
+		E5E7185B1C6FD2A7001957B9 /* AnalyticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E7185A1C6FD2A7001957B9 /* AnalyticsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,9 +123,6 @@
 		C378F7E01C60BBF000EBDF6D /* TimeleaperKimuraUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimeleaperKimuraUITests.m; sourceTree = "<group>"; };
 		C378F7E21C60BBF000EBDF6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C378F7F01C60BE7000EBDF6D /* PassConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PassConst.h; path = Util/Password/PassConst.h; sourceTree = "<group>"; };
-		C38D4FEA1C6FCD5F007DF204 /* AnalyticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnalyticsViewController.h; path = View/AnalyticsView/AnalyticsViewController.h; sourceTree = "<group>"; };
-		C38D4FEB1C6FCD5F007DF204 /* AnalyticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnalyticsViewController.m; path = View/AnalyticsView/AnalyticsViewController.m; sourceTree = "<group>"; };
-		C38D4FEC1C6FCD5F007DF204 /* AnalyticsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AnalyticsViewController.xib; path = View/AnalyticsView/AnalyticsViewController.xib; sourceTree = "<group>"; };
 		C3B402B11C64BA9700F26008 /* CommonService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonService.h; path = CommonService/Networking/CommonService.h; sourceTree = "<group>"; };
 		C3B402B21C64BA9700F26008 /* CommonService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommonService.m; path = CommonService/Networking/CommonService.m; sourceTree = "<group>"; };
 		C3B402BA1C64C12000F26008 /* CommonDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonDTO.h; path = CommonService/Networking/dto/CommonDTO.h; sourceTree = "<group>"; };
@@ -188,6 +184,8 @@
 		E52D258D1C6FA2EE00DD302F /* アイコン@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "アイコン@2x~ipad.png"; sourceTree = "<group>"; };
 		E52D258E1C6FA2EE00DD302F /* アイコン~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "アイコン~ipad.png"; sourceTree = "<group>"; };
 		E52D259E1C6FA3C000DD302F /* アイコン.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "アイコン.png"; sourceTree = "<group>"; };
+		E5E718591C6FD2A7001957B9 /* AnalyticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyticsViewController.h; sourceTree = "<group>"; };
+		E5E7185A1C6FD2A7001957B9 /* AnalyticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyticsViewController.m; sourceTree = "<group>"; };
 		F50F4A7F16B7C6EA2585DCD8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F69AC425C705F98C294597DE /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -310,11 +308,11 @@
 			isa = PBXGroup;
 			children = (
 				C378F7C41C60BBF000EBDF6D /* Main.storyboard */,
+				E5E718581C6FD26C001957B9 /* AnalyticsView */,
 				C31715EA1C6EC770005D1F64 /* LaunchScreen */,
 				C37893CB1C6CA6B600294BDF /* TopView */,
 				C3EAA92F1C6F012800FCD22C /* MemberView */,
 				C3EAA9411C6F370700FCD22C /* ChatView */,
-				C38D4FE11C6FC8E4007DF204 /* AnalyticsView */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -456,16 +454,6 @@
 				C378F7BF1C60BBF000EBDF6D /* AppDelegate.m */,
 			);
 			name = Main;
-			sourceTree = "<group>";
-		};
-		C38D4FE11C6FC8E4007DF204 /* AnalyticsView */ = {
-			isa = PBXGroup;
-			children = (
-				C38D4FEA1C6FCD5F007DF204 /* AnalyticsViewController.h */,
-				C38D4FEB1C6FCD5F007DF204 /* AnalyticsViewController.m */,
-				C38D4FEC1C6FCD5F007DF204 /* AnalyticsViewController.xib */,
-			);
-			name = AnalyticsView;
 			sourceTree = "<group>";
 		};
 		C3B402B01C64BA3200F26008 /* CommonService */ = {
@@ -695,6 +683,15 @@
 			path = "Legacy (iOS 6 and before)";
 			sourceTree = "<group>";
 		};
+		E5E718581C6FD26C001957B9 /* AnalyticsView */ = {
+			isa = PBXGroup;
+			children = (
+				E5E718591C6FD2A7001957B9 /* AnalyticsViewController.h */,
+				E5E7185A1C6FD2A7001957B9 /* AnalyticsViewController.m */,
+			);
+			name = AnalyticsView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -822,7 +819,6 @@
 				E52D25941C6FA2EE00DD302F /* アイコン-40@2x.png in Resources */,
 				E52D25971C6FA2EE00DD302F /* アイコン-60@3x.png in Resources */,
 				C378F7C61C60BBF000EBDF6D /* Main.storyboard in Resources */,
-				C38D4FEE1C6FCD5F007DF204 /* AnalyticsViewController.xib in Resources */,
 				E52D259B1C6FA2EE00DD302F /* アイコン@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -924,7 +920,7 @@
 				C378F7C01C60BBF000EBDF6D /* AppDelegate.m in Sources */,
 				C32F2D091C6AAE2B00C3D037 /* RTMStartResponse.m in Sources */,
 				C3EAA92B1C6EDE3C00FCD22C /* GetUserListResponse.m in Sources */,
-				C38D4FED1C6FCD5F007DF204 /* AnalyticsViewController.m in Sources */,
+				E5E7185B1C6FD2A7001957B9 /* AnalyticsViewController.m in Sources */,
 				C3B402C51C64C7E200F26008 /* TimeleaperKimuraService.m in Sources */,
 				C378F7BD1C60BBF000EBDF6D /* main.m in Sources */,
 				C37893D41C6CAF5900294BDF /* RTMSessionReconnect.m in Sources */,
