@@ -48,6 +48,7 @@
 		C3EAA9521C6F60F600FCD22C /* PostDMResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EAA9511C6F60F600FCD22C /* PostDMResponse.m */; };
 		C3EAA95A1C6F786000FCD22C /* GetGroupHistoryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EAA9591C6F786000FCD22C /* GetGroupHistoryRequest.m */; };
 		C3EAA95D1C6F790A00FCD22C /* GetGroupHistoryResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EAA95C1C6F790A00FCD22C /* GetGroupHistoryResponse.m */; };
+		E50F879B1C6FCF8600DDD143 /* アイディアアイコン (1).png in Resources */ = {isa = PBXBuildFile; fileRef = E50F879A1C6FCF8600DDD143 /* アイディアアイコン (1).png */; };
 		E52D258F1C6FA2EE00DD302F /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = E52D257F1C6FA2EE00DD302F /* Contents.json */; };
 		E52D25901C6FA2EE00DD302F /* アイコン-29.png in Resources */ = {isa = PBXBuildFile; fileRef = E52D25801C6FA2EE00DD302F /* アイコン-29.png */; };
 		E52D25911C6FA2EE00DD302F /* アイコン-29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E52D25811C6FA2EE00DD302F /* アイコン-29@2x.png */; };
@@ -165,6 +166,7 @@
 		C3EAA95B1C6F790A00FCD22C /* GetGroupHistoryResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GetGroupHistoryResponse.h; path = Util/Interface/Slack/GetGroupHistory/dto/GetGroupHistoryResponse.h; sourceTree = "<group>"; };
 		C3EAA95C1C6F790A00FCD22C /* GetGroupHistoryResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GetGroupHistoryResponse.m; path = Util/Interface/Slack/GetGroupHistory/dto/GetGroupHistoryResponse.m; sourceTree = "<group>"; };
 		DA9797D29F17F83D60C1EF3A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		E50F879A1C6FCF8600DDD143 /* アイディアアイコン (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "アイディアアイコン (1).png"; sourceTree = "<group>"; };
 		E52D257F1C6FA2EE00DD302F /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
 		E52D25801C6FA2EE00DD302F /* アイコン-29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "アイコン-29.png"; sourceTree = "<group>"; };
 		E52D25811C6FA2EE00DD302F /* アイコン-29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "アイコン-29@2x.png"; sourceTree = "<group>"; };
@@ -649,6 +651,7 @@
 		E52D257E1C6FA2EE00DD302F /* AppIcon.appiconset */ = {
 			isa = PBXGroup;
 			children = (
+				E50F879A1C6FCF8600DDD143 /* アイディアアイコン (1).png */,
 				E52D259E1C6FA3C000DD302F /* アイコン.png */,
 				E52D257F1C6FA2EE00DD302F /* Contents.json */,
 				E52D25801C6FA2EE00DD302F /* アイコン-29.png */,
@@ -784,6 +787,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E52D25981C6FA2EE00DD302F /* アイコン-76.png in Resources */,
+				E50F879B1C6FCF8600DDD143 /* アイディアアイコン (1).png in Resources */,
 				E52D25921C6FA2EE00DD302F /* アイコン-29@3x.png in Resources */,
 				E52D25991C6FA2EE00DD302F /* アイコン-76@2x.png in Resources */,
 				E52D25901C6FA2EE00DD302F /* アイコン-29.png in Resources */,
