@@ -8,6 +8,8 @@
 
 #import "GetChennelListResponse.h"
 
-@implementation GetChennelListResponse
+@implementation channel
+@end
 
+@implementation GetChennelListResponse
 @end

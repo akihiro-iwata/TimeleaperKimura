@@ -10,6 +10,10 @@
 #import "NXOAuth2.h"
 #import "PassConst.h"
 
+#import "AFNetworkActivityLogger.h"
+#import "AFNetworkActivityConsoleLogger.h"
+
+
 #import "NSURL+dictionaryFromQueryString.h"
 #import "TimeleaperKimuraService.h"
 #import "ViewController.h"
@@ -62,6 +66,8 @@ static NSString const * urlScheme = @"timeleaperkimura";
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [[AFNetworkActivityLogger sharedLogger] startLogging];
     
     /*
     // Override point for customization after application launch.

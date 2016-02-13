@@ -29,6 +29,9 @@ static const NSTimeInterval DEFAULT_TIMEOUT_FOR_RESOURCE    = 60.0;
     configuration.timeoutIntervalForResource = DEFAULT_TIMEOUT_FOR_RESOURCE;
     
     if ((self.sessionManager = [super initWithBaseURL:url sessionConfiguration:configuration])){
+        AFJSONResponseSerializer *responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
+        self.sessionManager.responseSerializer = responseSerializer;
+        
         // responseSelializer (default:AFJSONResponseSerializer)
         // requestSerializer (default:AFHTTPRequestSerializer)
     }
@@ -80,6 +83,31 @@ static const NSTimeInterval DEFAULT_TIMEOUT_FOR_RESOURCE    = 60.0;
             failure(error);
         }];
     }];
+}
+
+- (void)PATCH:(NSString*)relativePath withParameters:(NSString*)parameters success:(void(^)(id response))success failure:(void(^)(NSError *error))failure
+{
+    
+    NSURLSessionDataTask *task = [self.sessionManager PATCH:relativePath parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [self dispatch_async_global:^{
+            success(responseObject);
+        }];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [self dispatch_async_global:^{
+            failure(error);
+        }];
+    }];
+/*
+    NSURLSessionDataTask *task = [self.sessionManager PATCH:relativePath parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
+        [self dispatch_async_global:^{
+            success(responseObject);
+        }];
+    }failure:^(NSURLSessionDataTask *task, NSError *error){
+        [self dispatch_async_global:^{
+            failure(error);
+        }];
+    }];
+*/
 }
 
 

@@ -21,6 +21,7 @@
 
 - (void)POST:(NSString*)relativePath withParameters:(NSDictionary*)parameters success:(void(^)(id response))success failure:(void(^)(NSError *error))failure;
 
+- (void)PATCH:(NSString*)relativePath withParameters:(NSDictionary*)parameters success:(void(^)(id response))success failure:(void(^)(NSError *error))failure;
 
 
 @end

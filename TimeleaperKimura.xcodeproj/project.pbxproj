@@ -34,6 +34,18 @@
 		C3B402CD1C65ACB600F26008 /* xxAPIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B402CC1C65ACB600F26008 /* xxAPIResponse.m */; };
 		C3B402D31C65AD0800F26008 /* xxAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B402D21C65AD0800F26008 /* xxAPIRequest.m */; };
 		C3EAA9231C6ECBCA00FCD22C /* NSObject+RunBlockTasks.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EAA9221C6ECBCA00FCD22C /* NSObject+RunBlockTasks.m */; };
+		C3EAA9281C6EDCF700FCD22C /* GetUserListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EAA9271C6EDCF700FCD22C /* GetUserListRequest.m */; };
+		C3EAA92B1C6EDE3C00FCD22C /* GetUserListResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EAA92A1C6EDE3C00FCD22C /* GetUserListResponse.m */; };
+		C3EAA9321C6F018D00FCD22C /* MemberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EAA9311C6F018D00FCD22C /* MemberViewController.m */; };
+		C3EAA9361C6F02C100FCD22C /* MemberViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EAA9341C6F02C100FCD22C /* MemberViewTableViewCell.m */; };
+		C3EAA9371C6F02C100FCD22C /* MemberViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3EAA9351C6F02C100FCD22C /* MemberViewTableViewCell.xib */; };
+		C3EAA93D1C6F0EB500FCD22C /* xxAPIMessagesRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EAA93C1C6F0EB500FCD22C /* xxAPIMessagesRequest.m */; };
+		C3EAA9401C6F0ECD00FCD22C /* xxAPIMessagesResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EAA93F1C6F0ECD00FCD22C /* xxAPIMessagesResponse.m */; };
+		C3EAA9441C6F376200FCD22C /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EAA9431C6F376200FCD22C /* ChatViewController.m */; };
+		C3EAA9471C6F467F00FCD22C /* xxAPIReplyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EAA9461C6F467F00FCD22C /* xxAPIReplyRequest.m */; };
+		C3EAA94A1C6F469700FCD22C /* xxAPIReplyResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EAA9491C6F469700FCD22C /* xxAPIReplyResponse.m */; };
+		C3EAA94F1C6F60C300FCD22C /* PostDMRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EAA94E1C6F60C300FCD22C /* PostDMRequest.m */; };
+		C3EAA9521C6F60F600FCD22C /* PostDMResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EAA9511C6F60F600FCD22C /* PostDMResponse.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +119,29 @@
 		C3B402D21C65AD0800F26008 /* xxAPIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = xxAPIRequest.m; path = Util/Interface/xxAPI/dto/xxAPIRequest.m; sourceTree = "<group>"; };
 		C3EAA9211C6ECBCA00FCD22C /* NSObject+RunBlockTasks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+RunBlockTasks.h"; path = "Util/NSObject+RunBlockTasks.h"; sourceTree = "<group>"; };
 		C3EAA9221C6ECBCA00FCD22C /* NSObject+RunBlockTasks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+RunBlockTasks.m"; path = "Util/NSObject+RunBlockTasks.m"; sourceTree = "<group>"; };
+		C3EAA9261C6EDCF700FCD22C /* GetUserListRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GetUserListRequest.h; path = Util/Interface/Slack/GetUserList/dto/GetUserListRequest.h; sourceTree = "<group>"; };
+		C3EAA9271C6EDCF700FCD22C /* GetUserListRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GetUserListRequest.m; path = Util/Interface/Slack/GetUserList/dto/GetUserListRequest.m; sourceTree = "<group>"; };
+		C3EAA9291C6EDE3C00FCD22C /* GetUserListResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GetUserListResponse.h; path = Util/Interface/Slack/GetUserList/dto/GetUserListResponse.h; sourceTree = "<group>"; };
+		C3EAA92A1C6EDE3C00FCD22C /* GetUserListResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GetUserListResponse.m; path = Util/Interface/Slack/GetUserList/dto/GetUserListResponse.m; sourceTree = "<group>"; };
+		C3EAA9301C6F018D00FCD22C /* MemberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MemberViewController.h; path = View/MemberView/MemberViewController.h; sourceTree = "<group>"; };
+		C3EAA9311C6F018D00FCD22C /* MemberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MemberViewController.m; path = View/MemberView/MemberViewController.m; sourceTree = "<group>"; };
+		C3EAA9331C6F02C100FCD22C /* MemberViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MemberViewTableViewCell.h; path = View/MemberView/MemberViewTableViewCell.h; sourceTree = "<group>"; };
+		C3EAA9341C6F02C100FCD22C /* MemberViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MemberViewTableViewCell.m; path = View/MemberView/MemberViewTableViewCell.m; sourceTree = "<group>"; };
+		C3EAA9351C6F02C100FCD22C /* MemberViewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MemberViewTableViewCell.xib; path = View/MemberView/MemberViewTableViewCell.xib; sourceTree = "<group>"; };
+		C3EAA93B1C6F0EB500FCD22C /* xxAPIMessagesRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = xxAPIMessagesRequest.h; path = Util/Interface/xxAPI/Messages/dto/xxAPIMessagesRequest.h; sourceTree = "<group>"; };
+		C3EAA93C1C6F0EB500FCD22C /* xxAPIMessagesRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = xxAPIMessagesRequest.m; path = Util/Interface/xxAPI/Messages/dto/xxAPIMessagesRequest.m; sourceTree = "<group>"; };
+		C3EAA93E1C6F0ECD00FCD22C /* xxAPIMessagesResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = xxAPIMessagesResponse.h; path = Util/Interface/xxAPI/Messages/dto/xxAPIMessagesResponse.h; sourceTree = "<group>"; };
+		C3EAA93F1C6F0ECD00FCD22C /* xxAPIMessagesResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = xxAPIMessagesResponse.m; path = Util/Interface/xxAPI/Messages/dto/xxAPIMessagesResponse.m; sourceTree = "<group>"; };
+		C3EAA9421C6F376200FCD22C /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChatViewController.h; path = View/ChatView/ChatViewController.h; sourceTree = "<group>"; };
+		C3EAA9431C6F376200FCD22C /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChatViewController.m; path = View/ChatView/ChatViewController.m; sourceTree = "<group>"; };
+		C3EAA9451C6F467F00FCD22C /* xxAPIReplyRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = xxAPIReplyRequest.h; path = Util/Interface/xxAPI/Messages/dto/xxAPIReplyRequest.h; sourceTree = "<group>"; };
+		C3EAA9461C6F467F00FCD22C /* xxAPIReplyRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = xxAPIReplyRequest.m; path = Util/Interface/xxAPI/Messages/dto/xxAPIReplyRequest.m; sourceTree = "<group>"; };
+		C3EAA9481C6F469700FCD22C /* xxAPIReplyResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = xxAPIReplyResponse.h; path = Util/Interface/xxAPI/Messages/dto/xxAPIReplyResponse.h; sourceTree = "<group>"; };
+		C3EAA9491C6F469700FCD22C /* xxAPIReplyResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = xxAPIReplyResponse.m; path = Util/Interface/xxAPI/Messages/dto/xxAPIReplyResponse.m; sourceTree = "<group>"; };
+		C3EAA94D1C6F60C300FCD22C /* PostDMRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostDMRequest.h; path = Util/Interface/Slack/PostDM/PostDMRequest.h; sourceTree = "<group>"; };
+		C3EAA94E1C6F60C300FCD22C /* PostDMRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostDMRequest.m; path = Util/Interface/Slack/PostDM/PostDMRequest.m; sourceTree = "<group>"; };
+		C3EAA9501C6F60F600FCD22C /* PostDMResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostDMResponse.h; path = Util/Interface/Slack/PostDM/PostDMResponse.h; sourceTree = "<group>"; };
+		C3EAA9511C6F60F600FCD22C /* PostDMResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostDMResponse.m; path = Util/Interface/Slack/PostDM/PostDMResponse.m; sourceTree = "<group>"; };
 		DA9797D29F17F83D60C1EF3A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F50F4A7F16B7C6EA2585DCD8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F69AC425C705F98C294597DE /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,8 +193,10 @@
 		C32F2CFE1C6A09D400C3D037 /* Slack */ = {
 			isa = PBXGroup;
 			children = (
+				C3EAA94B1C6F608E00FCD22C /* PostDM */,
 				C37893CC1C6CA8A300294BDF /* RTM */,
 				C37893C11C6C9D6000294BDF /* GetChennelList */,
+				C3EAA9241C6EDCC200FCD22C /* GetUserList */,
 				C3B402B61C64C05D00F26008 /* OAuthAuthorization */,
 			);
 			name = Slack;
@@ -229,6 +266,8 @@
 				C378F7C41C60BBF000EBDF6D /* Main.storyboard */,
 				C31715EA1C6EC770005D1F64 /* LaunchScreen */,
 				C37893CB1C6CA6B600294BDF /* TopView */,
+				C3EAA92F1C6F012800FCD22C /* MemberView */,
+				C3EAA9411C6F370700FCD22C /* ChatView */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -432,7 +471,8 @@
 		C3B402C91C65AC7300F26008 /* xxAPI */ = {
 			isa = PBXGroup;
 			children = (
-				C3B402CA1C65AC9400F26008 /* dto */,
+				C3EAA9391C6F0E8900FCD22C /* Messages */,
+				C3EAA9381C6F0E7700FCD22C /* xxAPI */,
 			);
 			name = xxAPI;
 			sourceTree = "<group>";
@@ -444,6 +484,96 @@
 				C3B402D21C65AD0800F26008 /* xxAPIRequest.m */,
 				C3B402CB1C65ACB600F26008 /* xxAPIResponse.h */,
 				C3B402CC1C65ACB600F26008 /* xxAPIResponse.m */,
+			);
+			name = dto;
+			sourceTree = "<group>";
+		};
+		C3EAA9241C6EDCC200FCD22C /* GetUserList */ = {
+			isa = PBXGroup;
+			children = (
+				C3EAA9251C6EDCCF00FCD22C /* dto */,
+			);
+			name = GetUserList;
+			sourceTree = "<group>";
+		};
+		C3EAA9251C6EDCCF00FCD22C /* dto */ = {
+			isa = PBXGroup;
+			children = (
+				C3EAA9261C6EDCF700FCD22C /* GetUserListRequest.h */,
+				C3EAA9271C6EDCF700FCD22C /* GetUserListRequest.m */,
+				C3EAA9291C6EDE3C00FCD22C /* GetUserListResponse.h */,
+				C3EAA92A1C6EDE3C00FCD22C /* GetUserListResponse.m */,
+			);
+			name = dto;
+			sourceTree = "<group>";
+		};
+		C3EAA92F1C6F012800FCD22C /* MemberView */ = {
+			isa = PBXGroup;
+			children = (
+				C3EAA9301C6F018D00FCD22C /* MemberViewController.h */,
+				C3EAA9311C6F018D00FCD22C /* MemberViewController.m */,
+				C3EAA9331C6F02C100FCD22C /* MemberViewTableViewCell.h */,
+				C3EAA9341C6F02C100FCD22C /* MemberViewTableViewCell.m */,
+				C3EAA9351C6F02C100FCD22C /* MemberViewTableViewCell.xib */,
+			);
+			name = MemberView;
+			sourceTree = "<group>";
+		};
+		C3EAA9381C6F0E7700FCD22C /* xxAPI */ = {
+			isa = PBXGroup;
+			children = (
+				C3B402CA1C65AC9400F26008 /* dto */,
+			);
+			name = xxAPI;
+			sourceTree = "<group>";
+		};
+		C3EAA9391C6F0E8900FCD22C /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				C3EAA93A1C6F0E9100FCD22C /* dto */,
+			);
+			name = Messages;
+			sourceTree = "<group>";
+		};
+		C3EAA93A1C6F0E9100FCD22C /* dto */ = {
+			isa = PBXGroup;
+			children = (
+				C3EAA93B1C6F0EB500FCD22C /* xxAPIMessagesRequest.h */,
+				C3EAA93C1C6F0EB500FCD22C /* xxAPIMessagesRequest.m */,
+				C3EAA93E1C6F0ECD00FCD22C /* xxAPIMessagesResponse.h */,
+				C3EAA93F1C6F0ECD00FCD22C /* xxAPIMessagesResponse.m */,
+				C3EAA9451C6F467F00FCD22C /* xxAPIReplyRequest.h */,
+				C3EAA9461C6F467F00FCD22C /* xxAPIReplyRequest.m */,
+				C3EAA9481C6F469700FCD22C /* xxAPIReplyResponse.h */,
+				C3EAA9491C6F469700FCD22C /* xxAPIReplyResponse.m */,
+			);
+			name = dto;
+			sourceTree = "<group>";
+		};
+		C3EAA9411C6F370700FCD22C /* ChatView */ = {
+			isa = PBXGroup;
+			children = (
+				C3EAA9421C6F376200FCD22C /* ChatViewController.h */,
+				C3EAA9431C6F376200FCD22C /* ChatViewController.m */,
+			);
+			name = ChatView;
+			sourceTree = "<group>";
+		};
+		C3EAA94B1C6F608E00FCD22C /* PostDM */ = {
+			isa = PBXGroup;
+			children = (
+				C3EAA94C1C6F60A500FCD22C /* dto */,
+			);
+			name = PostDM;
+			sourceTree = "<group>";
+		};
+		C3EAA94C1C6F60A500FCD22C /* dto */ = {
+			isa = PBXGroup;
+			children = (
+				C3EAA94D1C6F60C300FCD22C /* PostDMRequest.h */,
+				C3EAA94E1C6F60C300FCD22C /* PostDMRequest.m */,
+				C3EAA9501C6F60F600FCD22C /* PostDMResponse.h */,
+				C3EAA9511C6F60F600FCD22C /* PostDMResponse.m */,
 			);
 			name = dto;
 			sourceTree = "<group>";
@@ -565,6 +695,7 @@
 			files = (
 				C378F7CB1C60BBF000EBDF6D /* LaunchScreen.storyboard in Resources */,
 				C378F7C81C60BBF000EBDF6D /* Assets.xcassets in Resources */,
+				C3EAA9371C6F02C100FCD22C /* MemberViewTableViewCell.xib in Resources */,
 				C378F7C61C60BBF000EBDF6D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -642,7 +773,10 @@
 				C3B402BC1C64C12000F26008 /* CommonDTO.m in Sources */,
 				C37893C81C6C9D9A00294BDF /* GetChennelListResponse.m in Sources */,
 				C37893C51C6C9D8A00294BDF /* GetChennelListRequest.m in Sources */,
+				C3EAA9361C6F02C100FCD22C /* MemberViewTableViewCell.m in Sources */,
 				C3EAA9231C6ECBCA00FCD22C /* NSObject+RunBlockTasks.m in Sources */,
+				C3EAA94F1C6F60C300FCD22C /* PostDMRequest.m in Sources */,
+				C3EAA9281C6EDCF700FCD22C /* GetUserListRequest.m in Sources */,
 				C3B402B31C64BA9700F26008 /* CommonService.m in Sources */,
 				C3B402BF1C64C31A00F26008 /* OAuthAuthorizationResponse.m in Sources */,
 				C3B402C21C64C3E100F26008 /* OAuthAuthorizationRequest.m in Sources */,
@@ -650,14 +784,22 @@
 				C37893C01C6C972D00294BDF /* RTMSessionRequest.m in Sources */,
 				C37893BD1C6C969E00294BDF /* RTMSessionResponse.m in Sources */,
 				C378F7C31C60BBF000EBDF6D /* ViewController.m in Sources */,
+				C3EAA9401C6F0ECD00FCD22C /* xxAPIMessagesResponse.m in Sources */,
+				C3EAA93D1C6F0EB500FCD22C /* xxAPIMessagesRequest.m in Sources */,
+				C3EAA9521C6F60F600FCD22C /* PostDMResponse.m in Sources */,
 				C3B402CD1C65ACB600F26008 /* xxAPIResponse.m in Sources */,
 				C37893B81C6C8D0800294BDF /* CommonWebSocketService.m in Sources */,
+				C3EAA94A1C6F469700FCD22C /* xxAPIReplyResponse.m in Sources */,
 				C32F2D061C6A0A4100C3D037 /* RTMStartRequest.m in Sources */,
+				C3EAA9321C6F018D00FCD22C /* MemberViewController.m in Sources */,
 				C378F7C01C60BBF000EBDF6D /* AppDelegate.m in Sources */,
 				C32F2D091C6AAE2B00C3D037 /* RTMStartResponse.m in Sources */,
+				C3EAA92B1C6EDE3C00FCD22C /* GetUserListResponse.m in Sources */,
 				C3B402C51C64C7E200F26008 /* TimeleaperKimuraService.m in Sources */,
 				C378F7BD1C60BBF000EBDF6D /* main.m in Sources */,
 				C37893D41C6CAF5900294BDF /* RTMSessionReconnect.m in Sources */,
+				C3EAA9471C6F467F00FCD22C /* xxAPIReplyRequest.m in Sources */,
+				C3EAA9441C6F376200FCD22C /* ChatViewController.m in Sources */,
 				C34CB3811C66CA7B00113A4D /* NSURL+dictionaryFromQueryString.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

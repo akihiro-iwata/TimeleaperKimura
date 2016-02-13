@@ -11,6 +11,7 @@
 #import "CommonDTO.h"
 
 // xx base URL
+//https://timeleaperkimura.herokuapp.com/api/v1/messages
 static NSString *xxBaseURL = @"https://timeleaperkimura.herokuapp.com/api/";
 
 // xx Endpoint
@@ -18,8 +19,12 @@ static NSString *v1Message = @"v1/messages";
 
 // slack base URL
 static NSString *slackBaseURL = @"https://slack.com/";
+
+// slack Endpoint
+static NSString *postDM = @"api/chat.postMessage";
 static NSString *tokenURL = @"api/oauth.access";
 static NSString *channelList = @"api/channels.list";
+static NSString *userList = @"api/users.list";
 static NSString *rtmStart = @"api/rtm.start";
 
 @implementation TimeleaperKimuraService
@@ -74,6 +79,7 @@ static NSString *rtmStart = @"api/rtm.start";
 
 #pragma mark -
 #pragma mark API Endpoint
+/*
 + (void)fetchxxAPI:(xxAPIRequest*)request success:(void(^)(xxAPIResponse*))success failure:(void(^)(NSError *error))failure
 {
     CommonService *service = [self xxAPIServiceShared];
@@ -85,6 +91,33 @@ static NSString *rtmStart = @"api/rtm.start";
         xxAPIResponse *customResponse = (xxAPIResponse*)responseDTO;
         success(customResponse);
     }failure:failure];
+}
+*/
++ (void)postxxAPIMessages:(xxAPIMessagesRequest*)request success:(void(^)(xxAPIMessagesResponse*))success failure:(void(^)(NSError *error))failure
+{
+    CommonService *service = [self xxAPIServiceShared];
+    __block CommonDTO *responseDTO;
+    __block NSError *error;
+
+    [service POST:[xxBaseURL stringByAppendingString:v1Message] withParameters:[request toDictionary] success:^(id response) {
+        responseDTO = [[xxAPIMessagesResponse alloc]initWithDictionary:response error:&error];
+        xxAPIMessagesResponse *customResponse = (xxAPIMessagesResponse*)responseDTO;
+        success(customResponse);
+    } failure:failure];
+}
+
++ (void)replyxxAPIMessages:(xxAPIReplyRequest*)request success:(void(^)(xxAPIReplyResponse*))success failure:(void(^)(NSError *error))failure
+{
+    CommonService *service = [self xxAPIServiceShared];
+    __block CommonDTO *responseDTO;
+    __block NSError *error;
+    
+    [service PATCH:[xxBaseURL stringByAppendingString:v1Message] withParameters:[request toDictionary] success:^(id response) {
+        responseDTO = [[xxAPIReplyResponse alloc]initWithDictionary:response error:&error];
+        xxAPIReplyResponse *customResponse = (xxAPIReplyResponse*)responseDTO;
+        success(customResponse);
+    } failure:failure];
+
 }
 
 + (void)rtmStartAPI:(RTMStartRequest*)request success:(void(^)(RTMStartResponse*))success failure:(void(^)(NSError *error))failure
@@ -100,6 +133,7 @@ static NSString *rtmStart = @"api/rtm.start";
     }failure:failure];
 }
 
+
 + (void)getChannelList:(GetChennelListRequest*)request success:(void(^)(GetChennelListResponse*))success failure:(void(^)(NSError *error))failure
 {
     CommonService *service = [self slackShared];
@@ -113,6 +147,18 @@ static NSString *rtmStart = @"api/rtm.start";
     }failure:failure];
 }
 
++ (void)getUserList:(GetUserListRequest*)request success:(void(^)(GetUserListResponse*))success failure:(void(^)(NSError *error))failure
+{
+    CommonService *service = [self slackShared];
+    __block CommonDTO *responseDTO;
+    __block NSError *error;
+    
+    [service GET:[slackBaseURL stringByAppendingString:userList] withParameters:[request toDictionary] success:^(id response){
+        responseDTO = [[GetUserListResponse alloc]initWithDictionary:response error:&error];
+        GetUserListResponse *customResponse = (GetUserListResponse*)responseDTO;
+        success(customResponse);
+    }failure:failure];
+}
 
 
 

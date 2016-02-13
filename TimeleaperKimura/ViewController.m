@@ -18,7 +18,7 @@
 #import "PassConst.h"
 #import "TimeleaperKimuraService.h"
 
-#import "RTMSessionReconnect.h"
+//#import "RTMSessionReconnect.h"
 #import "SVProgressHUD.h"
 #import "NSObject+RunBlockTasks.h"
 
@@ -61,10 +61,12 @@
         [SVProgressHUD dismiss];
         [[NXOAuth2AccountStore sharedStore] requestAccessToAccountWithType:accountType];
     }else{
-        [self getChannelList];
+        //[self getChannelList];
+        [self getUserList];
     }
 }
 
+/*
 - (void)getChannelList {
     
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
@@ -75,9 +77,13 @@
     [self dispatch_async_global:^{
         [TimeleaperKimuraService getChannelList:request success:^(GetChennelListResponse *response) {
             // save channel list
-            NSLog(@"%@",response);
+            //NSLog(@"%@",response.channels);
             [ud setObject:response.channels forKey:@"channelList"];
             [ud synchronize];
+            
+            NSLog(@"%@",response.channels[0]);
+            NSLog(@"%@",[ud objectForKey:@"channelList"]);
+            
             [blockSelf getRTMUrl];
         } failure:^(NSError *error) {
             [self dispatch_async_main:^{
@@ -87,7 +93,41 @@
         }];
     }];
 }
+*/
 
+- (void)getUserList {
+
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+
+    __block __weak ViewController *blockSelf = self;
+    __block GetUserListRequest *request = [GetUserListRequest request:[ud stringForKey:@"access_token"] presence:@"0"];
+    
+    [self dispatch_async_global:^{
+        [TimeleaperKimuraService getUserList:request success:^(GetUserListResponse *response) {
+            
+            // 0番目は自分の情報と仮定
+            NSData *selfData = [NSKeyedArchiver archivedDataWithRootObject:response.members[0]];
+            [ud setObject:selfData forKey:@"myList"];
+            
+            // memberをNSDataへ変換(UserDefaultsはカスタムクラスは保存不可)
+            NSData *memData = [NSKeyedArchiver archivedDataWithRootObject:response.members];
+            [ud setObject:memData forKey:@"userList"];
+            [ud synchronize];
+            
+            [self dispatch_async_main:^{
+                [SVProgressHUD dismiss];
+                [blockSelf performSegueWithIdentifier:@"gotoMemberView" sender:nil];
+            }];
+            //[blockSelf getRTMUrl];
+        } failure:^(NSError *error) {
+            [self dispatch_async_main:^{
+                NSLog(@"%@",error);
+                [SVProgressHUD showErrorWithStatus:@"failed"];
+            }];
+        }];
+    }];
+}
+/*
 - (void)getRTMUrl {
     
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
@@ -102,13 +142,6 @@
         [self dispatch_async_main:^{
             [SVProgressHUD showSuccessWithStatus:@"success!!"];
         }];
-        /*
-        //start websocket sessionq
-        SRWebSocket *web_socket = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[ud stringForKey:@"rtm_url"]]]];
-        [web_socket setDelegate:self];
-        [web_socket open];
-         */
-
     } failure:^(NSError *error) {
         [self dispatch_async_main:^{
             NSLog(@"%@",error);
@@ -117,7 +150,7 @@
     }];
     }];
 }
-
+*/
 #pragma mark - 
 #pragma mark WebSocket Delegate
 

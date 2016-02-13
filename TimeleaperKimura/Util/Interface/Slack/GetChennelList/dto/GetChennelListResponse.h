@@ -20,9 +20,12 @@
 @property(nonatomic) NSString *last_set;
 @end
 
-@interface channel
-@property(nonatomic) NSString *id;
-@property(nonatomic) NSString *name;
+@protocol channel
+@end
+
+@interface channel : CommonDTO
+@property(nonatomic) NSString* id;
+@property(nonatomic) NSString* name;
 @property(nonatomic) NSString *created;
 @property(nonatomic) NSString *creator;
 @property(nonatomic) NSString *is_archived;
@@ -35,6 +38,6 @@
 @interface GetChennelListResponse : CommonDTO
 
 @property(nonatomic) NSString *ok;
-@property(nonatomic) NSArray<channel*><Optional> *channels;
+@property(nonatomic) NSArray<channel>* channels;
 
 @end

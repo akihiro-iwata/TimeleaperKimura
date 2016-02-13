@@ -21,17 +21,28 @@
 #import "GetChennelListRequest.h"
 #import "GetChennelListResponse.h"
 
-#import "PostMessageRequest.h"
+#import "GetUserListRequest.h"
+#import "GetUserListResponse.h"
+
+#import "xxAPIMessagesRequest.h"
+#import "xxAPIMessagesResponse.h"
+
+#import "xxAPIReplyRequest.h"
+#import "xxAPIReplyResponse.h"
 
 @interface TimeleaperKimuraService : CommonService
 
 + (void)requestOAuthToken:(OAuthAuthorizationRequest*)request success:(void(^)(OAuthAuthorizationResponse*))success failure:(void(^)(NSError *error))failure;
 
-+ (void)fetchxxAPI:(xxAPIRequest*)request success:(void(^)(xxAPIResponse*))success failure:(void(^)(NSError *error))failure;
++ (void)postxxAPIMessages:(xxAPIMessagesRequest*)request success:(void(^)(xxAPIMessagesResponse*))success failure:(void(^)(NSError *error))failure;
+
++ (void)replyxxAPIMessages:(xxAPIReplyRequest*)request success:(void(^)(xxAPIReplyResponse*))success failure:(void(^)(NSError *error))failure;
 
 + (void)rtmStartAPI:(RTMStartRequest*)request success:(void(^)(RTMStartResponse*))success failure:(void(^)(NSError *error))failure;
 
 + (void)getChannelList:(GetChennelListRequest*)request success:(void(^)(GetChennelListResponse*))success failure:(void(^)(NSError *error))failure;
+
++ (void)getUserList:(GetUserListRequest*)request success:(void(^)(GetUserListResponse*))success failure:(void(^)(NSError *error))failure;
 
 /*
 + (void)webSocketStart:(UIViewController*)vc url:(NSString*)url;

@@ -5,9 +5,11 @@
 
 pod 'NXOAuth2Client', '~> 1.2.8'
 pod 'AFNetworking', '~> 3.0'
+pod 'AFNetworkActivityLogger', :git => "https://github.com/AFNetworking/AFNetworkActivityLogger", :branch => "3_0_0"
 pod 'JSONModel'
 pod 'AFOAuth2Manager', :git => "https://github.com/AFNetworking/AFOAuth2Manager", :branch => "3_0_0_branch"
 pod 'GoogleAppIndexing'
 pod 'SocketRocket' 
 pod 'SVProgressHUD'
 pod 'SGNavigationProgress'
+pod 'JSQMessagesViewController'
