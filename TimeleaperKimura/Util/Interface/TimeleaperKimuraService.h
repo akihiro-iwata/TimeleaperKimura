@@ -30,6 +30,12 @@
 #import "xxAPIReplyRequest.h"
 #import "xxAPIReplyResponse.h"
 
+#import "PostDMRequest.h"
+#import "PostDMResponse.h"
+
+#import "GetGroupHistoryRequest.h"
+#import "GetGroupHistoryResponse.h"
+
 @interface TimeleaperKimuraService : CommonService
 
 + (void)requestOAuthToken:(OAuthAuthorizationRequest*)request success:(void(^)(OAuthAuthorizationResponse*))success failure:(void(^)(NSError *error))failure;
@@ -43,6 +49,10 @@
 + (void)getChannelList:(GetChennelListRequest*)request success:(void(^)(GetChennelListResponse*))success failure:(void(^)(NSError *error))failure;
 
 + (void)getUserList:(GetUserListRequest*)request success:(void(^)(GetUserListResponse*))success failure:(void(^)(NSError *error))failure;
+
++ (void)postDMRequest:(PostDMRequest*)request success:(void(^)(PostDMResponse*))success failure:(void(^)(NSError *error))failure;
+
++ (void)getGroupHistory:(GetGroupHistoryRequest*)request success:(void(^)(GetGroupHistoryResponse*))success failure:(void(^)(NSError *error))failure;
 
 /*
 + (void)webSocketStart:(UIViewController*)vc url:(NSString*)url;

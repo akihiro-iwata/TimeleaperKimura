@@ -14,5 +14,7 @@
 @property(nonatomic) NSString *channel;
 @property(nonatomic) NSString *text;
 @property(nonatomic) NSString *username;
+@property(nonatomic) NSString *as_user;
 
++ (id)request:(NSString*)token channel:(NSString*)channel text:(NSString*)text username:(NSString*)username as_user:(NSString*)as_user;
 @end

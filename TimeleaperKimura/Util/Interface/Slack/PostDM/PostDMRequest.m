@@ -10,4 +10,24 @@
 
 @implementation PostDMRequest
 
++ (id)request:(NSString*)token channel:(NSString*)channel text:(NSString*)text username:(NSString*)username  as_user:(NSString*)as_user
+{
+    return [[self alloc]init:token channel:channel text:text username:username as_user:as_user];
+}
+
+- (id)init:(NSString*)token channel:(NSString*)channel text:(NSString*)text username:(NSString*)username as_user:(NSString*)as_user
+{
+    self = [self init];
+    if(self){
+        self.token = token;
+        self.channel = channel;
+        self.text = text;
+        self.username = username;
+        self.as_user = as_user;
+    }
+    return self;
+}
+
+
+
 @end

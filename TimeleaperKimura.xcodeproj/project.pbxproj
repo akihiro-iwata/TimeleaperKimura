@@ -46,6 +46,8 @@
 		C3EAA94A1C6F469700FCD22C /* xxAPIReplyResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EAA9491C6F469700FCD22C /* xxAPIReplyResponse.m */; };
 		C3EAA94F1C6F60C300FCD22C /* PostDMRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EAA94E1C6F60C300FCD22C /* PostDMRequest.m */; };
 		C3EAA9521C6F60F600FCD22C /* PostDMResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EAA9511C6F60F600FCD22C /* PostDMResponse.m */; };
+		C3EAA95A1C6F786000FCD22C /* GetGroupHistoryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EAA9591C6F786000FCD22C /* GetGroupHistoryRequest.m */; };
+		C3EAA95D1C6F790A00FCD22C /* GetGroupHistoryResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EAA95C1C6F790A00FCD22C /* GetGroupHistoryResponse.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +144,10 @@
 		C3EAA94E1C6F60C300FCD22C /* PostDMRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostDMRequest.m; path = Util/Interface/Slack/PostDM/PostDMRequest.m; sourceTree = "<group>"; };
 		C3EAA9501C6F60F600FCD22C /* PostDMResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostDMResponse.h; path = Util/Interface/Slack/PostDM/PostDMResponse.h; sourceTree = "<group>"; };
 		C3EAA9511C6F60F600FCD22C /* PostDMResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostDMResponse.m; path = Util/Interface/Slack/PostDM/PostDMResponse.m; sourceTree = "<group>"; };
+		C3EAA9581C6F786000FCD22C /* GetGroupHistoryRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GetGroupHistoryRequest.h; path = Util/Interface/Slack/GetGroupHistory/dto/GetGroupHistoryRequest.h; sourceTree = "<group>"; };
+		C3EAA9591C6F786000FCD22C /* GetGroupHistoryRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GetGroupHistoryRequest.m; path = Util/Interface/Slack/GetGroupHistory/dto/GetGroupHistoryRequest.m; sourceTree = "<group>"; };
+		C3EAA95B1C6F790A00FCD22C /* GetGroupHistoryResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GetGroupHistoryResponse.h; path = Util/Interface/Slack/GetGroupHistory/dto/GetGroupHistoryResponse.h; sourceTree = "<group>"; };
+		C3EAA95C1C6F790A00FCD22C /* GetGroupHistoryResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GetGroupHistoryResponse.m; path = Util/Interface/Slack/GetGroupHistory/dto/GetGroupHistoryResponse.m; sourceTree = "<group>"; };
 		DA9797D29F17F83D60C1EF3A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F50F4A7F16B7C6EA2585DCD8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F69AC425C705F98C294597DE /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -193,6 +199,7 @@
 		C32F2CFE1C6A09D400C3D037 /* Slack */ = {
 			isa = PBXGroup;
 			children = (
+				C3EAA9561C6F783200FCD22C /* GetGroupHistory */,
 				C3EAA94B1C6F608E00FCD22C /* PostDM */,
 				C37893CC1C6CA8A300294BDF /* RTM */,
 				C37893C11C6C9D6000294BDF /* GetChennelList */,
@@ -578,6 +585,25 @@
 			name = dto;
 			sourceTree = "<group>";
 		};
+		C3EAA9561C6F783200FCD22C /* GetGroupHistory */ = {
+			isa = PBXGroup;
+			children = (
+				C3EAA9571C6F783C00FCD22C /* dto */,
+			);
+			name = GetGroupHistory;
+			sourceTree = "<group>";
+		};
+		C3EAA9571C6F783C00FCD22C /* dto */ = {
+			isa = PBXGroup;
+			children = (
+				C3EAA9581C6F786000FCD22C /* GetGroupHistoryRequest.h */,
+				C3EAA9591C6F786000FCD22C /* GetGroupHistoryRequest.m */,
+				C3EAA95B1C6F790A00FCD22C /* GetGroupHistoryResponse.h */,
+				C3EAA95C1C6F790A00FCD22C /* GetGroupHistoryResponse.m */,
+			);
+			name = dto;
+			sourceTree = "<group>";
+		};
 		E3BF5206B183D2946578DEAD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -779,12 +805,14 @@
 				C3EAA9281C6EDCF700FCD22C /* GetUserListRequest.m in Sources */,
 				C3B402B31C64BA9700F26008 /* CommonService.m in Sources */,
 				C3B402BF1C64C31A00F26008 /* OAuthAuthorizationResponse.m in Sources */,
+				C3EAA95D1C6F790A00FCD22C /* GetGroupHistoryResponse.m in Sources */,
 				C3B402C21C64C3E100F26008 /* OAuthAuthorizationRequest.m in Sources */,
 				C37893D11C6CAA1500294BDF /* PostMessageRequest.m in Sources */,
 				C37893C01C6C972D00294BDF /* RTMSessionRequest.m in Sources */,
 				C37893BD1C6C969E00294BDF /* RTMSessionResponse.m in Sources */,
 				C378F7C31C60BBF000EBDF6D /* ViewController.m in Sources */,
 				C3EAA9401C6F0ECD00FCD22C /* xxAPIMessagesResponse.m in Sources */,
+				C3EAA95A1C6F786000FCD22C /* GetGroupHistoryRequest.m in Sources */,
 				C3EAA93D1C6F0EB500FCD22C /* xxAPIMessagesRequest.m in Sources */,
 				C3EAA9521C6F60F600FCD22C /* PostDMResponse.m in Sources */,
 				C3B402CD1C65ACB600F26008 /* xxAPIResponse.m in Sources */,

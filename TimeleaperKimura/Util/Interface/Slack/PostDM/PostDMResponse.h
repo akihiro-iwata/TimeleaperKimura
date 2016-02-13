@@ -8,6 +8,20 @@
 
 #import "CommonDTO.h"
 
+@protocol Message
+@end
+
+@interface Message : CommonDTO
+@property(nonatomic) NSString *type;
+@property(nonatomic) NSString *user;
+@property(nonatomic) NSString *text;
+@property(nonatomic) NSString *ts;
+@end
+
 @interface PostDMResponse : CommonDTO
+
+@property(nonatomic) NSString *ok;
+@property(nonatomic) NSString *channel;
+@property(nonatomic) Message *message;
 
 @end

@@ -18,9 +18,9 @@
 
 @property(nonatomic) NSString *type;
 @property(nonatomic) Error<Optional> *error;
-@property(nonatomic) NSString<Optional> *channel;
-@property(nonatomic) NSString<Optional> *user;
-@property(nonatomic) NSString<Optional> *text;
-@property(nonatomic) NSString<Optional> *ts;
+@property(nonatomic) NSString *channel;
+@property(nonatomic) NSString *user;
+@property(nonatomic) NSString *text;
+@property(nonatomic) NSString *ts;
 
 @end

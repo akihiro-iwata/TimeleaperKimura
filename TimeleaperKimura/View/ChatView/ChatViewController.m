@@ -17,7 +17,12 @@
 #import "RTMSessionRequest.h"
 #import "RTMSessionResponse.h"
 
-#import "PostMessageRequest.h"
+#import "PostDMRequest.h"
+#import "PostDMResponse.h"
+
+#import "GetGroupHistoryRequest.h"
+#import "GetGroupHistoryResponse.h"
+//#import "PostMessageRequest.h"
 
 #import "GetUserListResponse.h"
 
@@ -66,7 +71,7 @@
     
     // rtm session start
     [SVProgressHUD showWithStatus:@"now loading..."];
-    [self startRTMSession];
+    [self getGroupHistory];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
@@ -88,6 +93,7 @@
                       date:(NSDate *)date
 {
     // NG word validation
+    [SVProgressHUD showWithStatus:@"now loading..."];
     [self validationMessage:button withMessageText:text senderId:senderId senderDisplayName:senderDisplayName date:date];
 }
 
@@ -127,34 +133,27 @@
     return self.messages.count;
 }
 
-#pragma mark - Auto Message
-
-// ⑥ 返信メッセージを受信する (自動)
-- (void)receiveAutoMessage
-{
-    // 1秒後にメッセージを受信する
-    [NSTimer scheduledTimerWithTimeInterval:1
-                                     target:self
-                                   selector:@selector(didFinishMessageTimer:)
-                                   userInfo:nil
-                                    repeats:NO];
-}
-
-- (void)didFinishMessageTimer:(NSTimer*)timer
-{
-    // 効果音を再生する
-    [JSQSystemSoundPlayer jsq_playMessageSentSound];
-    // 新しいメッセージデータを追加する
-    JSQMessage *message = [JSQMessage messageWithSenderId:@"user2"
-                                              displayName:@"underscore"
-                                                     text:@"Hello"];
-    [self.messages addObject:message];
-    // メッセージの受信処理を完了する (画面上にメッセージが表示される)
-    [self finishReceivingMessageAnimated:YES];
-}
-
 #pragma mark -
 #pragma mark IF Operations
+- (void)getGroupHistory {
+    
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    
+    __block GetGroupHistoryRequest *request = [GetGroupHistoryRequest request:[ud stringForKey:@"access_token"] channel:@"D0KTUL8F8"];
+    
+    __block ChatViewController *blockSelf = self;
+    
+    [self dispatch_async_global:^{
+        [TimeleaperKimuraService getGroupHistory:request success:^(GetGroupHistoryResponse *response) {
+            NSLog(@"%@",response);
+            [blockSelf startRTMSession];
+        } failure:^(NSError *error) {
+            NSLog(@"%@",error);
+        }];
+    }];
+}
+
+
 - (void)validationMessage:(UIButton *)button
     withMessageText:(NSString *)text
            senderId:(NSString *)senderId
@@ -181,7 +180,7 @@
                 Words *ng = response.words[0];
                 if(ng.ngword){
                     NSString *NGWord = [word stringByAppendingString:ng.ngword];
-                    //[SVProgressHUD dismiss];
+                    [SVProgressHUD dismiss];
                     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"NGワード" message:NGWord preferredStyle:UIAlertControllerStyleAlert];
                     
                     [alert addAction:[UIAlertAction actionWithTitle:@"はい" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
@@ -213,15 +212,25 @@
   senderDisplayName:(NSString *)senderDisplayName
                date:(NSDate *)date {
     
-//    NSString *request = [[PostMessageRequest request:myList.id type:@"message" channel:@"C0KTT7JLE" text:text] toJSONString];
-    NSString *request = [[PostMessageRequest request:myList.id type:@"message" channel:[@"@" stringByAppendingString:self.Kimura.name] text:text] toJSONString];
-    NSLog(@"%@",request);
-    NSLog(@"%@",[@"@" stringByAppendingString:self.Kimura.name]);
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
     
-    [self.srWebSocket send:request];
+    PostDMRequest *request = [PostDMRequest request:[ud stringForKey:@"access_token"] channel:[@"@" stringByAppendingString:self.Kimura.name] text:text username:myList.name as_user:myList.name];
     
-    // メッセージの送信処理を完了する (画面上にメッセージが表示される)
-    [self finishSendingMessageAnimated:YES];
+    __block __weak ChatViewController *blockSelf = self;
+    
+    [TimeleaperKimuraService postDMRequest:request success:^(PostDMResponse *response) {
+        NSLog(@"private channel: %@",response.channel);
+        [blockSelf dispatch_async_main:^{
+            [SVProgressHUD dismiss];
+            // メッセージの送信処理を完了する (画面上にメッセージが表示される)
+            [self finishSendingMessageAnimated:YES];
+        }];
+    } failure:^(NSError *error) {
+        [SVProgressHUD dismiss];
+        NSLog(@"%@",error);
+    }];
+    
+    //[self.srWebSocket send:request];
 }
 
 #pragma mark -
@@ -267,13 +276,41 @@
 - (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message{
     NSLog(@"didReceiveMessage: %@", [message description]);
     
-    xxAPIReplyRequest *request = [xxAPIReplyRequest request:myList.id partner_id:self.Kimura.id reply_message:@"嫌い" reply_created_at:@"2016-02-13 18:00:00"];
+    // message receive
+    NSError *error = nil;
+    RTMSessionResponse *response = [[RTMSessionResponse alloc]initWithString:[message description] error:&error];
     
-    [TimeleaperKimuraService replyxxAPIMessages:request success:^(xxAPIReplyResponse *response) {
-        NSLog(@"%@",response);
-    } failure:^(NSError *error) {
-        NSLog(@"%@",error);
-    }];
+    __block __weak ChatViewController *blockSelf = self;
+    
+    if(!error && [response.user isEqualToString:self.Kimura.id] ){
+
+        NSDate *date = [NSDate date];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        /* 24時間表記 */
+        dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+        NSString *date24 = [dateFormatter stringFromDate:date];
+        
+        xxAPIReplyRequest *request = [xxAPIReplyRequest request:myList.id partner_id:self.Kimura.id reply_message:response.text reply_created_at:date24];
+        
+        [TimeleaperKimuraService replyxxAPIMessages:request success:^(xxAPIReplyResponse *NGresponse) {
+            NSLog(@"%@",NGresponse);
+            
+            [blockSelf dispatch_async_main:^{
+                // 効果音を再生する
+                [JSQSystemSoundPlayer jsq_playMessageSentSound];
+                // 新しいメッセージデータを追加する
+                JSQMessage *message = [JSQMessage messageWithSenderId:blockSelf.Kimura.id
+                                                          displayName:blockSelf.Kimura.name
+                                                                 text:response.text];
+                [blockSelf.messages addObject:message];
+                // メッセージの受信処理を完了する (画面上にメッセージが表示される)
+                [blockSelf finishReceivingMessageAnimated:YES];
+            }];
+            
+        } failure:^(NSError *error) {
+            NSLog(@"%@",error);
+        }];
+    }
 }
 
 /*

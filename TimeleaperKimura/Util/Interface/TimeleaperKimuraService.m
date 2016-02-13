@@ -26,6 +26,7 @@ static NSString *tokenURL = @"api/oauth.access";
 static NSString *channelList = @"api/channels.list";
 static NSString *userList = @"api/users.list";
 static NSString *rtmStart = @"api/rtm.start";
+static NSString *groupHistory = @"api/groups.history";
 
 @implementation TimeleaperKimuraService
 
@@ -160,6 +161,31 @@ static NSString *rtmStart = @"api/rtm.start";
     }failure:failure];
 }
 
++ (void)getGroupHistory:(GetGroupHistoryRequest*)request success:(void(^)(GetGroupHistoryResponse*))success failure:(void(^)(NSError *error))failure
+{
+    CommonService *service = [self slackShared];
+    __block CommonDTO *responseDTO;
+    __block NSError *error;
+    
+    [service GET:[slackBaseURL stringByAppendingString:groupHistory] withParameters:[request toDictionary] success:^(id response){
+        responseDTO = [[GetGroupHistoryResponse alloc]initWithDictionary:response error:&error];
+        GetGroupHistoryResponse *customResponse = (GetGroupHistoryResponse*)responseDTO;
+        success(customResponse);
+    }failure:failure];
+}
+
++ (void)postDMRequest:(PostDMRequest*)request success:(void(^)(PostDMResponse*))success failure:(void(^)(NSError *error))failure
+{
+    CommonService *service = [self slackShared];
+    __block CommonDTO *responseDTO;
+    __block NSError *error;
+    
+    [service GET:[slackBaseURL stringByAppendingString:postDM] withParameters:[request toDictionary] success:^(id response){
+        responseDTO = [[PostDMResponse alloc]initWithDictionary:response error:&error];
+        PostDMResponse *customResponse = (PostDMResponse*)responseDTO;
+        success(customResponse);
+    }failure:failure];
+}
 
 
 
