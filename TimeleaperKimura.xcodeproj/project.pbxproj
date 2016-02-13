@@ -31,9 +31,9 @@
 		C3B402BF1C64C31A00F26008 /* OAuthAuthorizationResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B402BE1C64C31A00F26008 /* OAuthAuthorizationResponse.m */; };
 		C3B402C21C64C3E100F26008 /* OAuthAuthorizationRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B402C11C64C3E100F26008 /* OAuthAuthorizationRequest.m */; };
 		C3B402C51C64C7E200F26008 /* TimeleaperKimuraService.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B402C41C64C7E200F26008 /* TimeleaperKimuraService.m */; };
-		C3B402C81C64CC0E00F26008 /* NSObject+RunBlockBackGround.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B402C71C64CC0E00F26008 /* NSObject+RunBlockBackGround.m */; };
 		C3B402CD1C65ACB600F26008 /* xxAPIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B402CC1C65ACB600F26008 /* xxAPIResponse.m */; };
 		C3B402D31C65AD0800F26008 /* xxAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B402D21C65AD0800F26008 /* xxAPIRequest.m */; };
+		C3EAA9231C6ECBCA00FCD22C /* NSObject+RunBlockTasks.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EAA9221C6ECBCA00FCD22C /* NSObject+RunBlockTasks.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,12 +101,12 @@
 		C3B402C11C64C3E100F26008 /* OAuthAuthorizationRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OAuthAuthorizationRequest.m; path = Util/Interface/OAuthAuthorization/dto/OAuthAuthorizationRequest.m; sourceTree = "<group>"; };
 		C3B402C31C64C7E200F26008 /* TimeleaperKimuraService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimeleaperKimuraService.h; path = Util/Interface/TimeleaperKimuraService.h; sourceTree = "<group>"; };
 		C3B402C41C64C7E200F26008 /* TimeleaperKimuraService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimeleaperKimuraService.m; path = Util/Interface/TimeleaperKimuraService.m; sourceTree = "<group>"; };
-		C3B402C61C64CC0E00F26008 /* NSObject+RunBlockBackGround.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+RunBlockBackGround.h"; path = "Util/NSObject+RunBlockBackGround.h"; sourceTree = "<group>"; };
-		C3B402C71C64CC0E00F26008 /* NSObject+RunBlockBackGround.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+RunBlockBackGround.m"; path = "Util/NSObject+RunBlockBackGround.m"; sourceTree = "<group>"; };
 		C3B402CB1C65ACB600F26008 /* xxAPIResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = xxAPIResponse.h; path = Util/Interface/xxAPI/dto/xxAPIResponse.h; sourceTree = "<group>"; };
 		C3B402CC1C65ACB600F26008 /* xxAPIResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = xxAPIResponse.m; path = Util/Interface/xxAPI/dto/xxAPIResponse.m; sourceTree = "<group>"; };
 		C3B402D11C65AD0800F26008 /* xxAPIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = xxAPIRequest.h; path = Util/Interface/xxAPI/dto/xxAPIRequest.h; sourceTree = "<group>"; };
 		C3B402D21C65AD0800F26008 /* xxAPIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = xxAPIRequest.m; path = Util/Interface/xxAPI/dto/xxAPIRequest.m; sourceTree = "<group>"; };
+		C3EAA9211C6ECBCA00FCD22C /* NSObject+RunBlockTasks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+RunBlockTasks.h"; path = "Util/NSObject+RunBlockTasks.h"; sourceTree = "<group>"; };
+		C3EAA9221C6ECBCA00FCD22C /* NSObject+RunBlockTasks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+RunBlockTasks.m"; path = "Util/NSObject+RunBlockTasks.m"; sourceTree = "<group>"; };
 		DA9797D29F17F83D60C1EF3A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F50F4A7F16B7C6EA2585DCD8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F69AC425C705F98C294597DE /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +145,14 @@
 				F50F4A7F16B7C6EA2585DCD8 /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		C31715EA1C6EC770005D1F64 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				C378F7C91C60BBF000EBDF6D /* LaunchScreen.storyboard */,
+			);
+			name = LaunchScreen;
 			sourceTree = "<group>";
 		};
 		C32F2CFE1C6A09D400C3D037 /* Slack */ = {
@@ -219,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				C378F7C41C60BBF000EBDF6D /* Main.storyboard */,
+				C31715EA1C6EC770005D1F64 /* LaunchScreen */,
 				C37893CB1C6CA6B600294BDF /* TopView */,
 			);
 			name = View;
@@ -300,7 +309,6 @@
 				C378F7EE1C60BE0700EBDF6D /* Util */,
 				C3B402B51C64C04300F26008 /* Interface */,
 				C378F7C71C60BBF000EBDF6D /* Assets.xcassets */,
-				C378F7C91C60BBF000EBDF6D /* LaunchScreen.storyboard */,
 				C378F7CC1C60BBF000EBDF6D /* Info.plist */,
 				C378F7BB1C60BBF000EBDF6D /* Supporting Files */,
 			);
@@ -337,10 +345,10 @@
 			isa = PBXGroup;
 			children = (
 				C378F7EF1C60BE1500EBDF6D /* Password */,
-				C3B402C61C64CC0E00F26008 /* NSObject+RunBlockBackGround.h */,
-				C3B402C71C64CC0E00F26008 /* NSObject+RunBlockBackGround.m */,
 				C34CB37F1C66CA7B00113A4D /* NSURL+dictionaryFromQueryString.h */,
 				C34CB3801C66CA7B00113A4D /* NSURL+dictionaryFromQueryString.m */,
+				C3EAA9211C6ECBCA00FCD22C /* NSObject+RunBlockTasks.h */,
+				C3EAA9221C6ECBCA00FCD22C /* NSObject+RunBlockTasks.m */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -634,6 +642,7 @@
 				C3B402BC1C64C12000F26008 /* CommonDTO.m in Sources */,
 				C37893C81C6C9D9A00294BDF /* GetChennelListResponse.m in Sources */,
 				C37893C51C6C9D8A00294BDF /* GetChennelListRequest.m in Sources */,
+				C3EAA9231C6ECBCA00FCD22C /* NSObject+RunBlockTasks.m in Sources */,
 				C3B402B31C64BA9700F26008 /* CommonService.m in Sources */,
 				C3B402BF1C64C31A00F26008 /* OAuthAuthorizationResponse.m in Sources */,
 				C3B402C21C64C3E100F26008 /* OAuthAuthorizationRequest.m in Sources */,
@@ -650,7 +659,6 @@
 				C378F7BD1C60BBF000EBDF6D /* main.m in Sources */,
 				C37893D41C6CAF5900294BDF /* RTMSessionReconnect.m in Sources */,
 				C34CB3811C66CA7B00113A4D /* NSURL+dictionaryFromQueryString.m in Sources */,
-				C3B402C81C64CC0E00F26008 /* NSObject+RunBlockBackGround.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,7 +8,7 @@
 
 #import "CommonService.h"
 
-#import "NSObject+RunBlockBackGround.h"
+#import "NSObject+RunBlockTasks.h"
 
 @implementation CommonService
 
@@ -55,11 +55,11 @@ static const NSTimeInterval DEFAULT_TIMEOUT_FOR_RESOURCE    = 60.0;
 - (void)GET:(NSString*)relativePath withParameters:(NSDictionary*)parameters success:(void(^)(id response))success failure:(void(^)(NSError *error))failure
 {
     NSURLSessionDataTask *task = [self.sessionManager GET:relativePath parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
-            [self runBlockInBackground:^{
+            [self dispatch_async_global:^{
                 success(responseObject);
             }];
     }failure:^(NSURLSessionDataTask *task, NSError *error){
-        [self runBlockInBackground:^{
+        [self dispatch_async_global:^{
             failure(error);
         }];
     }];
@@ -72,11 +72,11 @@ static const NSTimeInterval DEFAULT_TIMEOUT_FOR_RESOURCE    = 60.0;
 - (void)POST:(NSString*)relativePath withParameters:(NSDictionary*)parameters success:(void(^)(id response))success failure:(void(^)(NSError *error))failure
 {
     NSURLSessionDataTask *task = [self.sessionManager POST:relativePath parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
-        [self runBlockInBackground:^{
+        [self dispatch_async_global:^{
             success(responseObject);
         }];
     }failure:^(NSURLSessionDataTask *task, NSError *error){
-        [self runBlockInBackground:^{
+        [self dispatch_async_global:^{
             failure(error);
         }];
     }];

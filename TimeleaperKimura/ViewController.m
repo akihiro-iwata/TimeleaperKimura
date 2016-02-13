@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "TimeleaperKimuraService.h"
 
 #import "xxAPIRequest.h"
 #import "xxAPIResponse.h"
@@ -17,19 +16,21 @@
 
 #import "NXOAuth2.h"
 #import "PassConst.h"
+#import "TimeleaperKimuraService.h"
 
 #import "RTMSessionReconnect.h"
+#import "SVProgressHUD.h"
+#import "NSObject+RunBlockTasks.h"
 
 @interface ViewController ()
 
-// Set this before opening
-@property (nonatomic, assign) id <SRWebSocketDelegate> delegate;
 @end
 
 @implementation ViewController
 
 - (IBAction)startApp:(id)sender {
     
+    [SVProgressHUD showWithStatus:@"now loading..."];
     [self getOAuthAuthorization];
 }
 
@@ -57,11 +58,11 @@
     
     if (![ud boolForKey:@"HasLaunchedOnce"]){
         // process if this is first time to launch this app
+        [SVProgressHUD dismiss];
         [[NXOAuth2AccountStore sharedStore] requestAccessToAccountWithType:accountType];
     }else{
         [self getChannelList];
     }
-     
 }
 
 - (void)getChannelList {
@@ -71,17 +72,19 @@
     __block __weak ViewController *blockSelf = self;
     __block GetChennelListRequest *request = [GetChennelListRequest request:[ud stringForKey:@"access_token"] exclude_archived:@"1"];
     
-    [TimeleaperKimuraService getChannelList:request success:^(GetChennelListResponse *response) {
-        
-        // save channel list
-        NSLog(@"%@",response);
-        [ud setObject:response.channels forKey:@"channelList"];
-        [ud synchronize];
-        
-        [blockSelf getRTMUrl];
-        
-    } failure:^(NSError *error) {
-        NSLog(@"%@",error);
+    [self dispatch_async_global:^{
+        [TimeleaperKimuraService getChannelList:request success:^(GetChennelListResponse *response) {
+            // save channel list
+            NSLog(@"%@",response);
+            [ud setObject:response.channels forKey:@"channelList"];
+            [ud synchronize];
+            [blockSelf getRTMUrl];
+        } failure:^(NSError *error) {
+            [self dispatch_async_main:^{
+                NSLog(@"%@",error);
+                [SVProgressHUD showErrorWithStatus:@"failed"];
+            }];
+        }];
     }];
 }
 
@@ -91,17 +94,27 @@
 
     __block RTMStartRequest *request = [RTMStartRequest request:[ud stringForKey:@"access_token"] simple_latest:nil no_unreads:nil mpim_aware:nil] ;
     
+    [self dispatch_async_global:^{
     [TimeleaperKimuraService rtmStartAPI:request success:^(RTMStartResponse *response) {
         [ud setObject:response.url forKey:@"rtm_url"];
         [ud synchronize];
  
+        [self dispatch_async_main:^{
+            [SVProgressHUD showSuccessWithStatus:@"success!!"];
+        }];
+        /*
         //start websocket sessionq
         SRWebSocket *web_socket = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[ud stringForKey:@"rtm_url"]]]];
         [web_socket setDelegate:self];
         [web_socket open];
+         */
 
     } failure:^(NSError *error) {
-        NSLog(@"%@",error);
+        [self dispatch_async_main:^{
+            NSLog(@"%@",error);
+            [SVProgressHUD showErrorWithStatus:@"failed"];
+        }];
+    }];
     }];
 }
 
@@ -111,11 +124,12 @@
 - (void)webSocketDidOpen:(SRWebSocket *)webSocket{
     NSLog(@"websocket did open:%@",webSocket);
     
+    /*
     NSString *request = [[PostMessageRequest request:@"1" type:@"message" channel:@"C0KTT7JLE" text:@"This is test message"] toJSONString];
     NSLog(@"%@",request);
     
     [webSocket send:request];
-
+     */
 }
 
 - (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message{

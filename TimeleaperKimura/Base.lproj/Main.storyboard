@@ -30,13 +30,17 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="g3A-0o-GJj"/>
                                 </constraints>
-                                <state key="normal" title="木村、タイムリープしてね？"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="木村、タイムリープしてね？">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="startApp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cYD-Mr-va5"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.96470588235294119" green="0.14117647058823529" blue="0.34901960784313724" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="VhG-1m-SQZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="12" id="Dve-dY-F72"/>
                             <constraint firstItem="6w4-ne-8tK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="12" id="OFk-mX-YKE"/>
