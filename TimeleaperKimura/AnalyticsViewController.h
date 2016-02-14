@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "XYPieChart.h"
+#import "GetUserListResponse.h"
 
 
 @interface AnalyticsViewController : UIViewController<XYPieChartDataSource,XYPieChartDelegate>
@@ -17,5 +18,6 @@
 // 各スライスのデータ
 @property(nonatomic, strong) NSMutableArray *slices;
 
+@property (strong, nonatomic) Member *Kimura;
 
 @end

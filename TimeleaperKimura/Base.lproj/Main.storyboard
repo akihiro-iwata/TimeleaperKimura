@@ -39,20 +39,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VhG-1m-SQZ">
-                                <rect key="frame" x="28" y="611" width="319" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="2TF-xA-1Cr"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Slackアカウントを作る"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6w4-ne-8tK">
                                 <rect key="frame" x="28" y="555" width="319" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="g3A-0o-GJj"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <state key="normal" title="始める">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -68,18 +60,27 @@
                                     <constraint firstAttribute="height" constant="256" id="udX-cD-Wyl"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hanasstant" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="866-CK-0zH">
+                                <rect key="frame" x="59" y="129" width="256" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="249-Pz-daZ"/>
+                                    <constraint firstAttribute="width" constant="256" id="Jgx-fg-teS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="45"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.96470588235294119" green="0.14117647058823529" blue="0.34901960784313724" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="866-CK-0zH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="75J-JN-McE"/>
                             <constraint firstItem="Mhg-VA-XVU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8u0-Vy-iMV"/>
                             <constraint firstItem="Mhg-VA-XVU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="144" id="AEE-8M-b67"/>
-                            <constraint firstItem="VhG-1m-SQZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="12" id="Dve-dY-F72"/>
                             <constraint firstItem="6w4-ne-8tK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="12" id="OFk-mX-YKE"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="VhG-1m-SQZ" secondAttribute="bottom" constant="12" id="QXF-LE-QRr"/>
-                            <constraint firstItem="VhG-1m-SQZ" firstAttribute="top" secondItem="6w4-ne-8tK" secondAttribute="bottom" constant="12" id="QiG-VF-cWU"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="6w4-ne-8tK" secondAttribute="bottom" constant="68" id="SMY-hL-K2Z"/>
                             <constraint firstItem="Mhg-VA-XVU" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="UtS-23-2jK"/>
+                            <constraint firstItem="866-CK-0zH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="65" id="qTE-xM-3kf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6w4-ne-8tK" secondAttribute="trailing" constant="12" id="x8P-mY-tEG"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="VhG-1m-SQZ" secondAttribute="trailing" constant="12" id="zeG-yl-aIy"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -114,7 +115,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="czo-92-qF3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-204.5" y="1131.5"/>
+            <point key="canvasLocation" x="1453.5" y="334.5"/>
         </scene>
         <!--Member View Controller-->
         <scene sceneID="elK-f0-32S">
@@ -169,6 +170,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="L0X-Vn-UKx" kind="show" identifier="gotoAnalyticsView" id="sBW-At-c9o"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gk2-KG-hTG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -67,6 +67,9 @@ static NSString const * urlScheme = @"timeleaperkimura";
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    //スプラッシュ時間設定
+    sleep(2);
+    
     [[AFNetworkActivityLogger sharedLogger] startLogging];
     
     /*

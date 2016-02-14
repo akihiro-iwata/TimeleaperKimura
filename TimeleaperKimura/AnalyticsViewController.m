@@ -8,24 +8,39 @@
 
 #import "AnalyticsViewController.h"
 
+#import "xxAPIReplyResponse.h"
+
 
 @interface AnalyticsViewController ()
+
 
 @end
 
 @implementation AnalyticsViewController
+{
+    xxAPIReplyResponse *response;
+    NSArray<Text>* words;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+//    NSData *arcData = [ud objectForKey:[self.Kimura.id stringByAppendingString:@"ngwords"]];
+        NSData *arcData = [ud objectForKey:@"ngwords"];
+    response = [NSKeyedUnarchiver unarchiveObjectWithData:arcData];
+    words = response.words;
     
     // スライスに表示するデータの定義
     self.slices = [NSMutableArray arrayWithCapacity:5];
     
+    //for (int i = 0; i < 5; i ++) {
     for (int i = 0; i < 5; i ++) {
-        NSNumber *one = [NSNumber numberWithInt:rand() % 60 + 20];
-        [self.slices addObject:one];
+        //NSNumber *one = [NSNumber numberWithInt:rand() % 60 + 20];
+        Text *word = words[i];
+        [self.slices addObject:word.count_word];
     }
+    
     
     // 各項目の背景色を定義
     self.sliceColors = @[[UIColor colorWithRed:246/255.0 green:155/255.0 blue:0/255.0 alpha:1],
@@ -71,6 +86,7 @@
 // スライスの件数
 - (NSUInteger)numberOfSlicesInPieChart:(XYPieChart *)pieChart
 {
+    //return response.text.count;
     return self.slices.count;
 }
 
@@ -78,6 +94,9 @@
 - (CGFloat)pieChart:(XYPieChart *)pieChart valueForSliceAtIndex:(NSUInteger)index
 {
     return [self.slices[index] floatValue];
+    //Text *text = response.text[index];
+    //NSNumber *num = [NSNumber numberWithInt:[text.count_word intValue]];
+    //return [num floatValue];
 }
 
 // 各スライスの色を設定(Optional)
@@ -89,7 +108,9 @@
 // 各スライスに表示する文字列の設定(Optional)
 - (NSString *)pieChart:(XYPieChart *)pieChart textForSliceAtIndex:(NSUInteger)index
 {
-    return [NSString stringWithFormat:@"%@ 件", self.slices[index]];
+    //return [NSString stringWithFormat:@"%@ 件",]
+    Text *str = words[index];
+    return [NSString stringWithFormat:[str.ngword stringByAppendingString:@"\n"], self.slices[index]];
 }
 
 

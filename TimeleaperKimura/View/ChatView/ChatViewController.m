@@ -29,6 +29,10 @@
 
 #import "SVProgressHUD.h"
 #import "NSObject+RunBlockTasks.h"
+#import "AnalyticsViewController.h"
+
+#import "UIKit+AFNetworking.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface ChatViewController ()
 
@@ -63,7 +67,7 @@
     self.navigationItem.titleView = title;
     
     // ボタンを上記で作成したViewを用いて作成します。
-    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(openAnalyticsView)];
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(openAnalyticsView)];
     // ナビゲーションバーに追加します。
     self.navigationItem.rightBarButtonItem = rightButton;
     
@@ -74,7 +78,7 @@
     // ① 自分の senderId, senderDisplayName を設定
     self.senderId = myList.id;
     self.senderDisplayName = myList.name;
-    
+
     // ② MessageBubble (背景の吹き出し) を設定
     JSQMessagesBubbleImageFactory *bubbleFactory = [JSQMessagesBubbleImageFactory new];
     self.incomingBubble = [bubbleFactory  incomingMessagesBubbleImageWithColor:[UIColor jsq_messageBubbleLightGrayColor]];
@@ -109,11 +113,23 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+#pragma mark -
+#pragma mark Segue
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"gotoAnalyticsView"]) {
+        AnalyticsViewController *vc = segue.destinationViewController;
+        vc.Kimura = self.Kimura;
+    }
+}
+
 - (void)openAnalyticsView {
-    
     NSLog(@"%@",@"openAnalytics");
-    AnalyticsViewController *analyticsVC = [[AnalyticsViewController alloc] init];
-    [self presentViewController:analyticsVC animated:YES completion:nil];
+    [self performSegueWithIdentifier:@"gotoAnalyticsView" sender:nil];
+
+//    AnalyticsViewController *analyticsVC = [[AnalyticsViewController alloc] init];
+//    [self presentViewController:analyticsVC animated:YES completion:nil];
 }
 
 #pragma mark - JSQMessagesViewController
@@ -248,6 +264,8 @@
     
     __block __weak ChatViewController *blockSelf = self;
     
+    [blockSelf dispatch_async_global:^{
+
     [TimeleaperKimuraService postDMRequest:request success:^(PostDMResponse *response) {
         NSLog(@"private channel: %@",response.channel);
         [blockSelf dispatch_async_main:^{
@@ -262,6 +280,8 @@
         NSLog(@"%@",error);
     }];
     
+    }];
+
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.messages];
     [ud setObject:data forKey:self.Kimura.id];
     [ud synchronize];
@@ -280,12 +300,10 @@
         [TimeleaperKimuraService rtmStartAPI:request success:^(RTMStartResponse *response) {
             [ud setObject:response.url forKey:@"rtm_url"];
             [ud synchronize];
-            [self dispatch_async_main:^{
                 //start websocket sessionq
                 SRWebSocket *web_socket = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[ud stringForKey:@"rtm_url"]]]];
                 [web_socket setDelegate:blockSelf];
                 [web_socket open];
-            }];
  
         } failure:^(NSError *error) {
             [self dispatch_async_main:^{
@@ -324,8 +342,13 @@
         
         xxAPIReplyRequest *request = [xxAPIReplyRequest request:myList.id partner_id:self.Kimura.id reply_message:response.text reply_created_at:date24];
         
+        [self dispatch_async_global:^{
         [TimeleaperKimuraService replyxxAPIMessages:request success:^(xxAPIReplyResponse *NGresponse) {
             NSLog(@"%@",NGresponse);
+            
+            NSData *arcData = [NSKeyedArchiver archivedDataWithRootObject:NGresponse];
+            [ud setObject:arcData forKey:@"ngwords"];
+            [ud synchronize];
             
             [blockSelf dispatch_async_main:^{
                 // 効果音を再生する
@@ -335,15 +358,16 @@
                                                           displayName:blockSelf.Kimura.name
                                                                  text:response.text];
                 [self.messages addObject:message];
+                [self finishReceivingMessageAnimated:YES];
             }];
             
         } failure:^(NSError *error) {
             NSLog(@"%@",error);
         }];
+        }];
     }
     
     // メッセージの受信処理を完了する (画面上にメッセージが表示される)
-    [self finishReceivingMessageAnimated:YES];
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.messages];
     [ud setObject:data forKey:self.Kimura.id];
     [ud synchronize];

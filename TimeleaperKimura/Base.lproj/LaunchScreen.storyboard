@@ -20,11 +20,15 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cvY-aB-XlH">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="アイディアアイコン (1).png" translatesAutoresizingMaskIntoConstraints="NO" id="ipd-Pd-zPT">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="アイディアアイコン (1).png" translatesAutoresizingMaskIntoConstraints="NO" id="ipd-Pd-zPT">
                                         <rect key="frame" x="59" y="196" width="256" height="256"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="ipd-Pd-zPT" firstAttribute="centerX" secondItem="cvY-aB-XlH" secondAttribute="centerX" id="aTT-1u-tNT"/>
+                                    <constraint firstItem="ipd-Pd-zPT" firstAttribute="centerY" secondItem="cvY-aB-XlH" secondAttribute="centerY" id="qQv-kl-Kyq"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

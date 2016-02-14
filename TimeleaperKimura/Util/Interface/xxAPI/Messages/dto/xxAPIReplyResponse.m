@@ -8,6 +8,10 @@
 
 #import "xxAPIReplyResponse.h"
 
+@implementation Text
+
+@end
+
 @implementation xxAPIReplyResponse
 
 @end

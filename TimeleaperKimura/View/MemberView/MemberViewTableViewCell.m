@@ -34,7 +34,7 @@
 - (void)setData:(Member*)member
 {
     self.nameLabel.text = member.name;
-    self.messageLabel.text = @"あ""ぁ""〜";
+    self.messageLabel.text = @"";
     
     [self.profileImage setImageWithURL:[NSURL URLWithString:member.profile.image_192]];
     [self.contentView layoutIfNeeded];

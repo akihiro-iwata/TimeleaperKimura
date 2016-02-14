@@ -142,7 +142,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Kimura = memberArray[indexPath.row + 1];
+    Kimura = memberArray[indexPath.row];
     [self performSegueWithIdentifier:@"gotoChatView" sender:nil];
 }
 
@@ -162,7 +162,7 @@
     if(!cell){
         cell = [[MemberViewTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"MemberViewTableViewCell"];
     }
-    [cell setData:memberArray[indexPath.row + 1]];
+    [cell setData:memberArray[indexPath.row]];
     return cell;
 }
 
